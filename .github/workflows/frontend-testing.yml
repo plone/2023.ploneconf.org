@@ -67,7 +67,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            ${{ vars.IMAGE_NAME_PREFIX }}-${{ IMAGE_NAME_SUFFIX }}
+            ${{ vars.IMAGE_NAME_PREFIX }}-${{ env.IMAGE_NAME_SUFFIX }}
           flavor: |
             latest=false
           tags: |
