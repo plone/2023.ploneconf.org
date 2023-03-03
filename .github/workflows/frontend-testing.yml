@@ -8,7 +8,7 @@ on:
       - ".github/workflows/frontend-testing.yml"
 
 env:
-  IMAGE_NAME_SUFFIX: 2023-frontend
+  IMAGE_NAME_SUFFIX: frontend
 
 jobs:
 

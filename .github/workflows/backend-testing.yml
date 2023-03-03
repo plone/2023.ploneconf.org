@@ -8,7 +8,7 @@ on:
       - ".github/workflows/backend-testing.yml"
 
 env:
-  IMAGE_NAME_SUFFIX: 2023-backend
+  IMAGE_NAME_SUFFIX: backend
 
 jobs:
 
