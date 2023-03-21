@@ -22,7 +22,11 @@ import PersonsListingBody from './components/Blocks/Listing/PersonsListingBody';
 import PersonsSimpleListingBody from './components/Blocks/Listing/PersonsSimpleListingBody';
 import TalksListingBody from './components/Blocks/Listing/TalksListingBody';
 import TeaserPersonBody from './components/Blocks/Teaser/TeaserPersonBody';
-import DefaultTeaserBody from '@kitconcept/volto-blocks-grid/components/Teaser/DefaultBody';
+import {
+  TeaserHomeFeatured,
+  TeaserImageSideSchemaEnhancer,
+} from './components/Blocks/Teaser';
+import TeaserBlockDefaultBody from '@plone/volto/components/manage/Blocks/Teaser/DefaultBody';
 
 import calendarSVG from '@plone/volto/icons/calendar.svg';
 import heroSVG from '@plone/volto/icons/hero.svg';
@@ -72,12 +76,13 @@ const applyConfig = (config) => {
       id: 'default',
       isDefault: true,
       title: 'Default',
-      template: DefaultTeaserBody,
+      template: TeaserBlockDefaultBody,
     },
     {
-      id: 'person',
-      title: 'Person',
-      template: TeaserPersonBody,
+      id: 'homeFeatured',
+      title: 'Home Featured',
+      template: TeaserHomeFeatured,
+      schemaEnhancer: TeaserImageSideSchemaEnhancer,
     },
   ];
 
