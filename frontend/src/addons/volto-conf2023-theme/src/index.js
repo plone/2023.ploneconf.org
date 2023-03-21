@@ -96,12 +96,13 @@ const applyConfig = (config) => {
       id: 'persons',
       title: 'Persons',
       template: PersonsListingBody,
+      schemaEnhancer: HomeCheckboxSchema,
     },
-    {
-      id: 'personsSimple',
-      title: 'Persons Simple',
-      template: PersonsSimpleListingBody,
-    },
+    // {
+    //   id: 'personsSimple',
+    //   title: 'Persons Simple',
+    //   template: PersonsSimpleListingBody,
+    // },
     {
       id: 'talks',
       title: 'Talks',
