@@ -28,7 +28,9 @@ import {
 // import TeaserPersonBody from './components/Blocks/Teaser/TeaserPersonBody';
 import {
   TeaserHomeFeatured,
+  TeaserCard,
   HomeFeaturedSchemaEnhancer,
+  CardSchemaEnhancer,
 } from './components/Blocks/Teaser';
 import TeaserBlockDefaultBody from '@plone/volto/components/manage/Blocks/Teaser/DefaultBody';
 
@@ -74,8 +76,7 @@ const applyConfig = (config) => {
   config.views.contentTypesViews.Talk = Talk;
   config.views.contentTypesViews.Training = Training;
   config.views.contentTypesViews.Keynote = Keynote;
-
-  config.blocks.blocksConfig.teaser.variations = [
+  const teaserVariations = [
     {
       id: 'default',
       isDefault: true,
@@ -88,7 +89,18 @@ const applyConfig = (config) => {
       template: TeaserHomeFeatured,
       schemaEnhancer: HomeFeaturedSchemaEnhancer,
     },
+    {
+      id: 'teaserCard',
+      title: 'Teaser Card',
+      template: TeaserCard,
+      schemaEnhancer: CardSchemaEnhancer,
+    },
   ];
+
+  config.blocks.blocksConfig.teaser.variations = teaserVariations;
+
+  config.blocks.blocksConfig.__grid.blocksConfig.teaser.variations =
+    teaserVariations;
 
   config.blocks.blocksConfig.listing.variations = [
     ...config.blocks.blocksConfig.listing.variations,
