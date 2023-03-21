@@ -17,10 +17,14 @@ import SponsorsView from './components/Blocks/Sponsors/View';
 import VenueEdit from './components/Blocks/Venue/Edit';
 import VenueView from './components/Blocks/Venue/View';
 
-import NewsListingBody from './components/Blocks/Listing/NewsListingBody';
-import PersonsListingBody from './components/Blocks/Listing/PersonsListingBody';
-import PersonsSimpleListingBody from './components/Blocks/Listing/PersonsSimpleListingBody';
-import TalksListingBody from './components/Blocks/Listing/TalksListingBody';
+import {
+  NewsListingBody,
+  PersonsListingBody,
+  PersonsSimpleListingBody,
+  TalksListingBody,
+  HomeCheckboxSchema,
+} from './components/Blocks/Listing';
+
 import TeaserPersonBody from './components/Blocks/Teaser/TeaserPersonBody';
 import {
   TeaserHomeFeatured,
@@ -108,6 +112,7 @@ const applyConfig = (config) => {
       id: 'news',
       title: 'News',
       template: NewsListingBody,
+      schemaEnhancer: HomeCheckboxSchema,
     },
   ];
 
