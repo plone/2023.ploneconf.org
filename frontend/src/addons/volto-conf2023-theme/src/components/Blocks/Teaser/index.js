@@ -1,3 +1,3 @@
-import TeaserHomeFeatured from "./TeaserHomeFeatured";
-import { TeaserImageSideSchemaEnhancer } from "./TeaserImageSideSchemaEnhancer";
-export { TeaserHomeFeatured, TeaserImageSideSchemaEnhancer };
+import TeaserHomeFeatured from './TeaserHomeFeatured';
+import { HomeFeaturedSchemaEnhancer } from './HomeFeaturedSchemaEnhancer';
+export { TeaserHomeFeatured, HomeFeaturedSchemaEnhancer };

@@ -20,15 +20,15 @@ import VenueView from './components/Blocks/Venue/View';
 import {
   NewsListingBody,
   PersonsListingBody,
-  PersonsSimpleListingBody,
+  // PersonsSimpleListingBody,
   TalksListingBody,
   HomeCheckboxSchema,
 } from './components/Blocks/Listing';
 
-import TeaserPersonBody from './components/Blocks/Teaser/TeaserPersonBody';
+// import TeaserPersonBody from './components/Blocks/Teaser/TeaserPersonBody';
 import {
   TeaserHomeFeatured,
-  TeaserImageSideSchemaEnhancer,
+  HomeFeaturedSchemaEnhancer,
 } from './components/Blocks/Teaser';
 import TeaserBlockDefaultBody from '@plone/volto/components/manage/Blocks/Teaser/DefaultBody';
 
@@ -86,7 +86,7 @@ const applyConfig = (config) => {
       id: 'homeFeatured',
       title: 'Home Featured',
       template: TeaserHomeFeatured,
-      schemaEnhancer: TeaserImageSideSchemaEnhancer,
+      schemaEnhancer: HomeFeaturedSchemaEnhancer,
     },
   ];
 
