@@ -29,8 +29,10 @@ import {
 import {
   TeaserHomeFeatured,
   TeaserCard,
+  TeaserMainFeatured,
   HomeFeaturedSchemaEnhancer,
   CardSchemaEnhancer,
+  MainFeaturedSchemaEnhancer,
 } from './components/Blocks/Teaser';
 import TeaserBlockDefaultBody from '@plone/volto/components/manage/Blocks/Teaser/DefaultBody';
 
@@ -94,6 +96,12 @@ const applyConfig = (config) => {
       title: 'Teaser Card',
       template: TeaserCard,
       schemaEnhancer: CardSchemaEnhancer,
+    },
+    {
+      id: 'mainFeatured',
+      title: 'Main Featured',
+      template: TeaserMainFeatured,
+      schemaEnhancer: MainFeaturedSchemaEnhancer,
     },
   ];
 

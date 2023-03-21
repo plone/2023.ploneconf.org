@@ -165,7 +165,7 @@ const TeaserHomeFeatured = (props) => {
               ) : (
                 <StringToHTML string={data?.richtext?.data} />
               )}
-              <Grid.Row>
+              <Grid.Row className="home-teaser-item-read-more">
                 <MaybeWrap
                   condition={!isEditMode}
                   as={UniversalLink}
