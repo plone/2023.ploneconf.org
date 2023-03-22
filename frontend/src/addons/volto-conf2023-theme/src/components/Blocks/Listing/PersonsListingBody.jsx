@@ -6,7 +6,6 @@ import { ConditionalLink } from '@plone/volto/components';
 const PersonsListingBody = (props) => {
   const { items, isEditMode, homeBlock } = props;
   const speakersLink = '/speakers';
-  console.log('items', items);
 
   return (
     <div
