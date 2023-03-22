@@ -3,6 +3,8 @@ name: Frontend test, release and deploy to testing.ploneconf.org
 on:
   workflow_dispatch:
   push:
+    branches:
+      - main
     paths:
       - "frontend/**"
 
