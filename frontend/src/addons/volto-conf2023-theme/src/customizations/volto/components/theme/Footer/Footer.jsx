@@ -72,7 +72,7 @@ const Footer = ({ intl }) => {
               alt="Plone Foundation Logo"
               title="Plone Foundation"
             />
-            <div class="foundation-text">
+            <div className="foundation-text">
               <FormattedMessage
                 id="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
                 defaultMessage="The {plonecms} is {copyright} 2000-{current_year} by the {plonefoundation} and friends."
