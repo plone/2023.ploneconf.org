@@ -107,8 +107,7 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.teaser.variations = teaserVariations;
 
-  config.blocks.blocksConfig.__grid.blocksConfig.teaser.variations =
-    teaserVariations;
+  config.blocks.blocksConfig.__grid.blocksConfig.teaser.variations = teaserVariations;
 
   config.blocks.blocksConfig.listing.variations = [
     ...config.blocks.blocksConfig.listing.variations,

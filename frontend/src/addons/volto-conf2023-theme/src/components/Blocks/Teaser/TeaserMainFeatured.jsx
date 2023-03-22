@@ -36,10 +36,7 @@ const ImageContainer = (props) => {
 };
 
 const TeaserHomeFeatured = (props) => {
-  const {
-    data,
-    isEditMode,
-  } = props;
+  const { data, isEditMode } = props;
   const intl = useIntl();
   const href = data.href?.[0];
   const image = data.preview_image?.[0];

@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Container, List, Segment, Image } from 'semantic-ui-react';
+import { Image } from 'semantic-ui-react';
 import { map } from 'lodash';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { useSelector, shallowEqual } from 'react-redux';

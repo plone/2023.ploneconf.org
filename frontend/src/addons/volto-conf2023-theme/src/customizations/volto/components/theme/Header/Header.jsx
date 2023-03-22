@@ -3,18 +3,12 @@
  * @module components/theme/Header/Header
  */
 
-import React, { Component } from "react";
-import { Container, Segment } from "semantic-ui-react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { Container, Segment } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import {
-  Anontools,
-  LanguageSelector,
-  Logo,
-  Navigation,
-  SearchWidget,
-} from "@plone/volto/components";
+import { Logo, Navigation } from '@plone/volto/components';
 
 /**
  * Header component class.
