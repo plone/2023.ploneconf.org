@@ -1,45 +1,50 @@
 import React from 'react';
 import { injectIntl, FormattedMessage } from 'react-intl';
-import { Image, Icon } from 'semantic-ui-react';
+import { Image, Icon, Grid } from 'semantic-ui-react';
 import { ConditionalLink } from '@plone/volto/components';
 
-const NewsListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
+const NewsListingBody = (props) => {
+  const { items, isEditMode, homeBlock } = props;
   const newsLink = '/news';
 
   return (
-    <div className="news-list">
-      <div className="wrapper-aside text">
-        <h2 className="aside-title">
-          <a href={newsLink}>
-            <FormattedMessage id="News" defaultMessage="News" />
-          </a>
-        </h2>
-      </div>
-      <div className="news-listing">
+    <div
+      className={homeBlock ? 'news-listing home-news-listing' : 'news-listing'}
+    >
+      <h2 className="">
+        <FormattedMessage id="News" defaultMessage="News" />
+      </h2>
+      <Grid className="news-listing" columns={3} stackable>
         {items.map((item, index) => {
           return (
-            <ConditionalLink
-              item={item}
-              condition={!isEditMode}
-              className="news-body"
-              key={index}
-            >
-              <div className="news-image">
-                <Image src={`${item['@id']}/@@images/image/preview`} />
-              </div>
-              <div className="news-texts">
-                <div className="news-title">{item.title}</div>
-                <div className="news-text">
-                  {item.description && item.description}
-                </div>
-              </div>
-            </ConditionalLink>
+            <Grid.Column key={index}>
+              {item.image_field && (
+                <Grid.Row>
+                  <ConditionalLink item={item} condition={!isEditMode}>
+                    <Image
+                      src={`${item['@id']}/@@images/${item.image_field}`}
+                    />
+                  </ConditionalLink>
+                </Grid.Row>
+              )}
+              <Grid.Row>
+                <ConditionalLink item={item} condition={!isEditMode}>
+                  <h3 className="news-listing-title">{item.title}</h3>
+                </ConditionalLink>
+              </Grid.Row>
+              {item.description && (
+                <Grid.Row>
+                  <span className="news-listing-description"></span>
+                  {item.description}
+                </Grid.Row>
+              )}
+            </Grid.Column>
           );
         })}
-      </div>
-      <a href="/news" className="news-more">
-        <Icon name="add" />
+      </Grid>
+      <a href={newsLink} className="news-listing-more">
         <FormattedMessage id="More News" defaultMessage="More News" />
+        <Icon name="add" />
       </a>
     </div>
   );

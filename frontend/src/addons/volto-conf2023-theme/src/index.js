@@ -17,12 +17,24 @@ import SponsorsView from './components/Blocks/Sponsors/View';
 import VenueEdit from './components/Blocks/Venue/Edit';
 import VenueView from './components/Blocks/Venue/View';
 
-import NewsListingBody from './components/Blocks/Listing/NewsListingBody';
-import PersonsListingBody from './components/Blocks/Listing/PersonsListingBody';
-import PersonsSimpleListingBody from './components/Blocks/Listing/PersonsSimpleListingBody';
-import TalksListingBody from './components/Blocks/Listing/TalksListingBody';
-import TeaserPersonBody from './components/Blocks/Teaser/TeaserPersonBody';
-import DefaultTeaserBody from '@kitconcept/volto-blocks-grid/components/Teaser/DefaultBody';
+import {
+  NewsListingBody,
+  PersonsListingBody,
+  // PersonsSimpleListingBody,
+  TalksListingBody,
+  HomeCheckboxSchema,
+} from './components/Blocks/Listing';
+
+// import TeaserPersonBody from './components/Blocks/Teaser/TeaserPersonBody';
+import {
+  TeaserHomeFeatured,
+  TeaserCard,
+  TeaserMainFeatured,
+  HomeFeaturedSchemaEnhancer,
+  CardSchemaEnhancer,
+  MainFeaturedSchemaEnhancer,
+} from './components/Blocks/Teaser';
+import TeaserBlockDefaultBody from '@plone/volto/components/manage/Blocks/Teaser/DefaultBody';
 
 import calendarSVG from '@plone/volto/icons/calendar.svg';
 import heroSVG from '@plone/volto/icons/hero.svg';
@@ -66,20 +78,36 @@ const applyConfig = (config) => {
   config.views.contentTypesViews.Talk = Talk;
   config.views.contentTypesViews.Training = Training;
   config.views.contentTypesViews.Keynote = Keynote;
-
-  config.blocks.blocksConfig.teaser.variations = [
+  const teaserVariations = [
     {
       id: 'default',
       isDefault: true,
       title: 'Default',
-      template: DefaultTeaserBody,
+      template: TeaserBlockDefaultBody,
     },
     {
-      id: 'person',
-      title: 'Person',
-      template: TeaserPersonBody,
+      id: 'homeFeatured',
+      title: 'Home Featured',
+      template: TeaserHomeFeatured,
+      schemaEnhancer: HomeFeaturedSchemaEnhancer,
+    },
+    {
+      id: 'teaserCard',
+      title: 'Teaser Card',
+      template: TeaserCard,
+      schemaEnhancer: CardSchemaEnhancer,
+    },
+    {
+      id: 'mainFeatured',
+      title: 'Main Featured',
+      template: TeaserMainFeatured,
+      schemaEnhancer: MainFeaturedSchemaEnhancer,
     },
   ];
+
+  config.blocks.blocksConfig.teaser.variations = teaserVariations;
+
+  config.blocks.blocksConfig.__grid.blocksConfig.teaser.variations = teaserVariations;
 
   config.blocks.blocksConfig.listing.variations = [
     ...config.blocks.blocksConfig.listing.variations,
@@ -87,12 +115,13 @@ const applyConfig = (config) => {
       id: 'persons',
       title: 'Persons',
       template: PersonsListingBody,
+      schemaEnhancer: HomeCheckboxSchema,
     },
-    {
-      id: 'personsSimple',
-      title: 'Persons Simple',
-      template: PersonsSimpleListingBody,
-    },
+    // {
+    //   id: 'personsSimple',
+    //   title: 'Persons Simple',
+    //   template: PersonsSimpleListingBody,
+    // },
     {
       id: 'talks',
       title: 'Talks',
@@ -103,6 +132,7 @@ const applyConfig = (config) => {
       id: 'news',
       title: 'News',
       template: NewsListingBody,
+      schemaEnhancer: HomeCheckboxSchema,
     },
   ];
 

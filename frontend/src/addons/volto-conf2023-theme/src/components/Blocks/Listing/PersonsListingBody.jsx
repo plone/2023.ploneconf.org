@@ -1,66 +1,60 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { injectIntl, FormattedMessage } from 'react-intl';
+import { Image, Icon, Grid } from 'semantic-ui-react';
 import { ConditionalLink } from '@plone/volto/components';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import config from '@plone/volto/registry';
 
-import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
-import { isInternalURL } from '@plone/volto/helpers/Url/Url';
-
-const PersonsListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
-  let link = null;
-  let href = linkHref?.[0]?.['@id'] || '';
-
-  if (isInternalURL(href)) {
-    link = (
-      <ConditionalLink to={flattenToAppURL(href)} condition={!isEditMode}>
-        {linkTitle || href}
-      </ConditionalLink>
-    );
-  } else if (href) {
-    link = <a href={href}>{linkTitle || href}</a>;
-  }
-
-  const { settings } = config;
+const PersonsListingBody = (props) => {
+  const { items, isEditMode, homeBlock } = props;
+  const speakersLink = '/speakers';
 
   return (
-    <>
-      <div className="persons-listing items">
-        {items.map((item) => (
-          <div className="listing-item" key={item['@id']}>
-            <ConditionalLink item={item} condition={!isEditMode}>
-              <div className="listing-image-wrapper">
-                {!item[settings.listingPreviewImageField] && (
-                  <img src={DefaultImageSVG} alt="" />
-                )}
-                {item[settings.listingPreviewImageField] && (
-                  <img
-                    src={flattenToAppURL(
-                      item[settings.listingPreviewImageField].scales.preview
-                        .download,
-                    )}
-                    alt={item.title}
-                  />
-                )}
-              </div>
-              <div className="listing-body">
-                <h3>{item.title ? item.title : item.id}</h3>
-                <p>{item.description}</p>
-              </div>
-            </ConditionalLink>
-          </div>
-        ))}
-      </div>
-
-      {link && <div className="footer">{link}</div>}
-    </>
+    <div
+      className={
+        homeBlock
+          ? 'speakers-listing home-speakers-listing'
+          : 'speakers-listing'
+      }
+    >
+      <h2 className="">
+        <FormattedMessage id="Speakers" defaultMessage="Speakers" />
+      </h2>
+      <Grid className="speakers-listing" columns={4} stackable>
+        {items.map((item, index) => {
+          return (
+            <Grid.Column key={index}>
+              {item.image_field && (
+                <Grid.Row>
+                  <ConditionalLink item={item} condition={!isEditMode}>
+                    <Image
+                      src={`${item['@id']}/@@images/${item.image_field}`}
+                    />
+                  </ConditionalLink>
+                </Grid.Row>
+              )}
+              <Grid.Row>
+                <ConditionalLink item={item} condition={!isEditMode}>
+                  <h3 className="speakers-listing-title">{item.title}</h3>
+                </ConditionalLink>
+              </Grid.Row>
+              {item.description && (
+                <Grid.Row>
+                  <span className="speakers-listing-description"></span>
+                  {item.description}
+                </Grid.Row>
+              )}
+            </Grid.Column>
+          );
+        })}
+      </Grid>
+      <a href={speakersLink} className="speakers-listing-more">
+        <FormattedMessage
+          id="View all speakers"
+          defaultMessage="View all speakers"
+        />
+        <Icon name="add" />
+      </a>
+    </div>
   );
 };
 
-PersonsListingBody.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.any).isRequired,
-  linkMore: PropTypes.any,
-  isEditMode: PropTypes.bool,
-};
-
-export default PersonsListingBody;
+export default injectIntl(PersonsListingBody);
