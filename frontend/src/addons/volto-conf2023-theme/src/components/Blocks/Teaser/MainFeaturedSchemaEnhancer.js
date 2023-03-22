@@ -1,5 +1,5 @@
 export const MainFeaturedSchemaEnhancer = (props) => {
-  const { intl, schema } = props;
+  const { schema } = props;
   const fieldsToRemove = ['head_title'];
   return {
     ...schema,
