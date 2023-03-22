@@ -15,12 +15,12 @@ import {
   createEmptyParagraph,
   normalizeExternalData,
 } from '@plone/volto-slate/utils';
-
 import { MaybeWrap } from '@plone/volto/components';
 import { UniversalLink } from '@plone/volto/components';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 import { getTeaserImageURL } from '@plone/volto/components/manage/Blocks/Teaser/utils';
 import { flattenToAppURL } from '@plone/volto/helpers';
+import { isInternalURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
 import StringToHTML from '../../helpers/StringToHTML';
@@ -51,8 +51,15 @@ const ImageContainer = (props) => {
 };
 
 const TeaserHomeFeatured = (props) => {
-  const { data, isEditMode, id, onChangeBlock, block, selected, properties } =
-    props;
+  const {
+    data,
+    isEditMode,
+    id,
+    onChangeBlock,
+    block,
+    selected,
+    properties,
+  } = props;
   const intl = useIntl();
   const href = data.href?.[0];
   const image = data.preview_image?.[0];
@@ -113,6 +120,7 @@ const TeaserHomeFeatured = (props) => {
         richtext: toHtml(newValue),
       });
     },
+    /* eslint-disable-next-line */
     [onChangeBlock, toHtml, id],
   );
 
