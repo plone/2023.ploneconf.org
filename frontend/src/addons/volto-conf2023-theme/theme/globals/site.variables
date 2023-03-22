@@ -1,0 +1,17 @@
+
+
+
+/*-------------------
+    Brand Colors
+--------------------*/
+
+@ploneBlue           : #0095D3;
+
+@primaryColor        : @ploneBlue;
+@secondaryColor      : #990033;
+@tertiaryColor      : #000023;
+
+/*-------------------
+       Links
+--------------------*/
+@linkColor           : @primaryColor;
