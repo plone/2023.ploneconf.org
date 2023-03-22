@@ -1,7 +1,7 @@
 /*******************************
         Global Overrides
 *******************************/
-
+.loadThemeFonts();
 .siteroot .breadcrumbs {
   display: none;
 }

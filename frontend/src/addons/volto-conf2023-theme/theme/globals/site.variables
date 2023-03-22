@@ -1,5 +1,9 @@
 
-
+/*-------------------
+      Base Sizes
+--------------------*/
+/* This is the single variable that controls them all */
+@emSize   : 18px;
 
 /*-------------------
     Brand Colors
@@ -11,7 +15,13 @@
 @secondaryColor      : #990033;
 @tertiaryColor      : #000023;
 
+@textColor: @tertiaryColor;
+
 /*-------------------
        Links
 --------------------*/
 @linkColor           : @primaryColor;
+
+@pageFont: 'Barlow', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@headerFont: 'Barlow condensed', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@fontSize : 18px;

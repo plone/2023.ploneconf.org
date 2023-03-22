@@ -1,0 +1,133 @@
+/* barlow-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-regular.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-regular.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-regular.svg#Barlow')
+      format('svg'); /* Legacy iOS */
+}
+/* barlow-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-italic.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-italic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-italic.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-italic.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-italic.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-italic.svg#Barlow')
+      format('svg'); /* Legacy iOS */
+}
+/* barlow-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-700.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-700.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-700.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-700.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-700.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('./assets/fonts/barlow-v12-latin/barlow-v12-latin-700.svg#Barlow')
+      format('svg'); /* Legacy iOS */
+}
+
+/* barlow-condensed-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-regular.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-regular.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-regular.svg#BarlowCondensed')
+      format('svg'); /* Legacy iOS */
+}
+/* barlow-condensed-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-600.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-600.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-600.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-600.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-600.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-600.svg#BarlowCondensed')
+      format('svg'); /* Legacy iOS */
+}
+/* barlow-condensed-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-700.eot'); /* IE9 Compat Modes */
+  src: url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-700.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-700.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-700.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-700.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('./assets/fonts/barlow-condensed-v12-latin/barlow-condensed-v12-latin-700.svg#BarlowCondensed')
+      format('svg'); /* Legacy iOS */
+}

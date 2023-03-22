@@ -40,8 +40,8 @@ const Footer = ({ intl }) => {
 
   return (
     <div id="footer">
-      <div className="ui container">
-        <div className="ploneconf-footer bg-tertiary">
+      <div className="ploneconf-footer bg-tertiary">
+        <div className="ui container">
           <div className="ploneconf-footer-organizer">
             <span className="organizer-title">The organizer</span>
             <Image
@@ -65,7 +65,9 @@ const Footer = ({ intl }) => {
             />
           </div>
         </div>
-        <div className="foundation-footer bg-primary">
+      </div>
+      <div className="foundation-footer bg-primary">
+        <div className="ui container">
           <div className="foundation-footer-logo">
             <Image
               src={ploneFoundationLogo}
