@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Message } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
-import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 import { MaybeWrap } from '@plone/volto/components';
 import { UniversalLink } from '@plone/volto/components';
 import cx from 'classnames';
