@@ -1,0 +1,12 @@
+.navigation,
+.tools {
+  .ui.secondary.pointing.menu {
+
+
+    .item {
+      color: @textColor;
+      font-weight:bold;
+      font-size: 1.2rem;
+    }
+  }
+}
