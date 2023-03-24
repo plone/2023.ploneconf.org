@@ -1,2 +1,6 @@
+@import 'main';
 @import 'header';
+@import 'breadcrumb';
+@import 'tableofcontents';
+@import 'about';
 @import 'footer';
