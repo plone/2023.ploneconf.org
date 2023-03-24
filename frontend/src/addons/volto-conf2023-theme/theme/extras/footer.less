@@ -4,7 +4,7 @@
 
     .ploneconf-footer-vertical-logo{
         padding:0 0 2rem 0;
-        opacity: 0.8;
+        opacity: 0.6;
     }
 
     .ploneconf-footer-organizer {
@@ -22,9 +22,7 @@
 }
 
 .foundation-footer .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
     padding: 2rem 0;
 
     .foundation-footer-logo{
@@ -34,7 +32,7 @@
             width: 30%;
         }
         .foundation-text {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             color: white;
             margin-left: 1rem;
             width: 40%;
@@ -57,7 +55,39 @@
         a{
             color: white;
             text-transform: uppercase;
+
+
+        }
+        a.item:hover {
+            border-bottom: 1px solid white;
+        }
+
+        .social-network {
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.2rem;
         }
     }
 
+}
+
+@media only screen and (max-width: 767px){
+    .foundation-footer-logo {
+        flex-direction: column;
+        align-items: start !important;
+
+        .foundation-text{
+            margin-left: 0 !important;
+            width: 60% !important;
+        }
+    }
+        .site-actions {
+            margin-left: 0 !important;
+            margin-top: 1rem;
+
+            .item {
+                    margin-left: 0 !important;
+                    margin-right: 1rem;
+                }
+        }
 }
