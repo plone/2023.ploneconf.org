@@ -5,4 +5,5 @@
 @import 'table';
 @import 'teaser';
 @import 'about';
+@import 'home';
 @import 'footer';

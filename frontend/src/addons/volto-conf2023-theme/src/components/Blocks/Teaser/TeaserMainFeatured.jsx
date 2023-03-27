@@ -24,15 +24,7 @@ const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
 const ImageContainer = (props) => {
   const { hasImageComponent, href, defaultImageSrc } = props;
   const Image = config.getComponent('Image').component || DefaultImage;
-  return (
-    <div className="grid-image-wrapper">
-      <Image
-        src={hasImageComponent ? href : defaultImageSrc}
-        alt=""
-        loading="lazy"
-      />
-    </div>
-  );
+  return <Image src={hasImageComponent ? href : defaultImageSrc} alt="" />;
 };
 
 const TeaserHomeFeatured = (props) => {
