@@ -3,28 +3,28 @@
  * @module components/theme/Breadcrumbs/Breadcrumbs
  */
 
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { compose } from "redux";
-import { Link } from "react-router-dom";
-import { Breadcrumb, Container, Segment } from "semantic-ui-react";
-import { defineMessages, injectIntl } from "react-intl";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { Link } from 'react-router-dom';
+import { Breadcrumb, Container, Segment } from 'semantic-ui-react';
+import { defineMessages, injectIntl } from 'react-intl';
 
-import { Icon } from "@plone/volto/components";
-import { getBreadcrumbs } from "@plone/volto/actions";
-import { getBaseUrl, hasApiExpander } from "@plone/volto/helpers";
+import { Icon } from '@plone/volto/components';
+import { getBreadcrumbs } from '@plone/volto/actions';
+import { getBaseUrl, hasApiExpander } from '@plone/volto/helpers';
 
-import homeSVG from "@plone/volto/icons/home.svg";
+import homeSVG from '@plone/volto/icons/home.svg';
 
 const messages = defineMessages({
   home: {
-    id: "Home",
-    defaultMessage: "Home",
+    id: 'Home',
+    defaultMessage: 'Home',
   },
   breadcrumbs: {
-    id: "Breadcrumbs",
-    defaultMessage: "Breadcrumbs",
+    id: 'Breadcrumbs',
+    defaultMessage: 'Breadcrumbs',
   },
 });
 
@@ -45,12 +45,12 @@ export class BreadcrumbsComponent extends Component {
       PropTypes.shape({
         title: PropTypes.string,
         url: PropTypes.string,
-      })
+      }),
     ).isRequired,
   };
 
   componentDidMount() {
-    if (!hasApiExpander("breadcrumbs", getBaseUrl(this.props.pathname))) {
+    if (!hasApiExpander('breadcrumbs', getBaseUrl(this.props.pathname))) {
       this.props.getBreadcrumbs(getBaseUrl(this.props.pathname));
     }
   }
@@ -63,7 +63,7 @@ export class BreadcrumbsComponent extends Component {
    */
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.pathname !== this.props.pathname) {
-      if (!hasApiExpander("breadcrumbs", getBaseUrl(this.props.pathname))) {
+      if (!hasApiExpander('breadcrumbs', getBaseUrl(this.props.pathname))) {
         this.props.getBreadcrumbs(getBaseUrl(nextProps.pathname));
       }
     }
@@ -86,7 +86,7 @@ export class BreadcrumbsComponent extends Component {
         <Container>
           <Breadcrumb>
             <Link
-              to={this.props.root || "/"}
+              to={this.props.root || '/'}
               className="section"
               title={this.props.intl.formatMessage(messages.home)}
             >
@@ -118,6 +118,6 @@ export default compose(
       items: state.breadcrumbs.items,
       root: state.breadcrumbs.root,
     }),
-    { getBreadcrumbs }
-  )
+    { getBreadcrumbs },
+  ),
 )(BreadcrumbsComponent);

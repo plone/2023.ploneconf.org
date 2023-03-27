@@ -3,22 +3,22 @@
  * @module components/theme/Footer/Footer
  */
 
-import React from "react";
-import { Image, Icon } from "semantic-ui-react";
-import { map } from "lodash";
-import { FormattedMessage, defineMessages, injectIntl } from "react-intl";
-import { useSelector, shallowEqual } from "react-redux";
-import { UniversalLink } from "@plone/volto/components";
-import config from "@plone/volto/registry";
-import { flattenToAppURL, addAppURL } from "@plone/volto/helpers";
-import footerVerticalLogo from "volto-conf2023-theme/../theme/assets/images/LogoVerticalWhite.svg";
-import ploneFoundationLogo from "volto-conf2023-theme/../theme/assets/images/plone-foundation-logo.svg";
-import codesyntaxLogo from "volto-conf2023-theme/../theme/assets/images/CodeSyntax.svg";
+import React from 'react';
+import { Image, Icon } from 'semantic-ui-react';
+import { map } from 'lodash';
+import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
+import { useSelector, shallowEqual } from 'react-redux';
+import { UniversalLink } from '@plone/volto/components';
+import config from '@plone/volto/registry';
+import { flattenToAppURL, addAppURL } from '@plone/volto/helpers';
+import footerVerticalLogo from 'volto-conf2023-theme/../theme/assets/images/LogoVerticalWhite.svg';
+import ploneFoundationLogo from 'volto-conf2023-theme/../theme/assets/images/plone-foundation-logo.svg';
+import codesyntaxLogo from 'volto-conf2023-theme/../theme/assets/images/CodeSyntax.svg';
 
 const messages = defineMessages({
   copyright: {
-    id: "Copyright",
-    defaultMessage: "Copyright",
+    id: 'Copyright',
+    defaultMessage: 'Copyright',
   },
 });
 
@@ -35,7 +35,7 @@ const Footer = ({ intl }) => {
       lang: state.intl.locale,
       siteActions: state.actions?.actions?.site_actions,
     }),
-    shallowEqual
+    shallowEqual,
   );
 
   return (
@@ -101,7 +101,7 @@ const Footer = ({ intl }) => {
                     </a>
                   ),
                 }}
-              />{" "}
+              />{' '}
               <FormattedMessage
                 id="Distributed under the {license}."
                 defaultMessage="Distributed under the {license}."

@@ -40,13 +40,12 @@ const ImageContainer = (props) => {
   const { hasImageComponent, href, defaultImageSrc } = props;
   const Image = config.getComponent('Image').component || DefaultImage;
   return (
-    <div className="grid-image-wrapper">
-      <Image
-        src={hasImageComponent ? href : defaultImageSrc}
-        alt=""
-        loading="lazy"
-      />
-    </div>
+    <Image
+      className="home-featured-image"
+      src={hasImageComponent ? href : defaultImageSrc}
+      alt=""
+      loading="lazy"
+    />
   );
 };
 
@@ -138,7 +137,7 @@ const TeaserHomeFeatured = (props) => {
         <div className="home-teaser-item featured">
           <Grid className="home-teaser-item-content" columns={2}>
             {(href.hasPreviewImage || image) && data.imageSide === 'left' && (
-              <Grid.Column>
+              <Grid.Column className="grid-image-wrapper-column">
                 <ImageContainer
                   hasImageComponent={hasImageComponent}
                   href={href}
@@ -146,18 +145,13 @@ const TeaserHomeFeatured = (props) => {
                 />
               </Grid.Column>
             )}
-            <Grid.Column>
-              <Grid.Row>
-                {data?.title && (
-                  <h3 className="home-teaser-item-title">{data?.title}</h3>
-                )}
-              </Grid.Row>
+            <Grid.Column className="grid-text-wrapper-column">
+              {data?.title && (
+                <h3 className="home-teaser-item-title">{data?.title}</h3>
+              )}
+
               {data?.subtitle && (
-                <Grid.Row>
-                  <h4 className="home-teaser-item-subtitle">
-                    {data?.subtitle}
-                  </h4>
-                </Grid.Row>
+                <h4 className="home-teaser-item-subtitle">{data?.subtitle}</h4>
               )}
               {isEditMode ? (
                 <SlateEditor
@@ -173,7 +167,7 @@ const TeaserHomeFeatured = (props) => {
               ) : (
                 <StringToHTML string={data?.richtext?.data} />
               )}
-              <Grid.Row className="home-teaser-item-read-more">
+              <div className="home-teaser-item-read-more">
                 <MaybeWrap
                   condition={!isEditMode}
                   as={UniversalLink}
@@ -188,10 +182,10 @@ const TeaserHomeFeatured = (props) => {
                   <FormattedMessage id="Read more" defaultMessage="Read more" />
                   <Icon name="add" />
                 </MaybeWrap>
-              </Grid.Row>
+              </div>
             </Grid.Column>
             {(href.hasPreviewImage || image) && data.imageSide === 'right' && (
-              <Grid.Column>
+              <Grid.Column className="grid-image-wrapper-column">
                 <ImageContainer
                   hasImageComponent={hasImageComponent}
                   href={href}
