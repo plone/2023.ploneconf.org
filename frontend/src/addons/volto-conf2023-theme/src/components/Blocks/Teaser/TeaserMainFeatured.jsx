@@ -1,6 +1,6 @@
 import React from 'react';
 import { defineMessages, useIntl, FormattedMessage } from 'react-intl';
-import { Grid, Message, Icon } from 'semantic-ui-react';
+import { Message, Icon } from 'semantic-ui-react';
 
 import { MaybeWrap } from '@plone/volto/components';
 import { UniversalLink } from '@plone/volto/components';
@@ -59,34 +59,31 @@ const TeaserHomeFeatured = (props) => {
             />
           )}
           <div className="main-teaser-item-content">
-            <Grid>
-              <Grid.Row>
-                {data?.title && (
-                  <h3 className="main-teaser-item-title">{data?.title}</h3>
-                )}
-              </Grid.Row>
-              {data?.description && (
-                <Grid.Row className="main-teaser-item-description">
-                  {data?.description}
-                </Grid.Row>
-              )}
-              <Grid.Row>
-                <MaybeWrap
-                  condition={!isEditMode}
-                  as={UniversalLink}
-                  href={href['@id']}
-                  target={
-                    data.openLinkInNewTab ||
-                    (openExternalLinkInNewTab && !isInternalURL(href['@id']))
-                      ? '_blank'
-                      : null
-                  }
-                >
-                  <FormattedMessage id="Read more" defaultMessage="Read more" />
-                  <Icon name="add" />
-                </MaybeWrap>
-              </Grid.Row>
-            </Grid>
+            {data?.title && (
+              <h1 className="main-teaser-item-title">{data?.title}</h1>
+            )}
+
+            {data?.description && (
+              <div className="main-teaser-item-description">
+                {data?.description}
+              </div>
+            )}
+            <div className="read-more">
+              <MaybeWrap
+                condition={!isEditMode}
+                as={UniversalLink}
+                href={href['@id']}
+                target={
+                  data.openLinkInNewTab ||
+                  (openExternalLinkInNewTab && !isInternalURL(href['@id']))
+                    ? '_blank'
+                    : null
+                }
+              >
+                <FormattedMessage id="Read more" defaultMessage="Read more" />
+                <Icon name="add" />
+              </MaybeWrap>
+            </div>
           </div>
         </div>
       )}

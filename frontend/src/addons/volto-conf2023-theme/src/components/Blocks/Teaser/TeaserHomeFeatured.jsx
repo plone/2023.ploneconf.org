@@ -167,7 +167,7 @@ const TeaserHomeFeatured = (props) => {
               ) : (
                 <StringToHTML string={data?.richtext?.data} />
               )}
-              <div className="home-teaser-item-read-more">
+              <div className="read-more">
                 <MaybeWrap
                   condition={!isEditMode}
                   as={UniversalLink}

@@ -9,7 +9,11 @@ const NewsListingBody = (props) => {
 
   return (
     <div
-      className={homeBlock ? 'news-listing home-news-listing' : 'news-listing'}
+      className={
+        homeBlock
+          ? 'news-listing home-news-listing ui container'
+          : 'news-listing'
+      }
     >
       <h2 className="">
         <FormattedMessage id="News" defaultMessage="News" />
