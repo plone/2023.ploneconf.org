@@ -6,4 +6,5 @@
 @import 'teaser';
 @import 'about';
 @import 'home';
+@import 'news';
 @import 'footer';

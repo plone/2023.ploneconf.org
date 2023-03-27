@@ -1,65 +1,67 @@
-.content-area {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
+.siteroot {
+  .content-area {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
 
-#page-document {
-  width: 100% !important;
-}
+  #page-document {
+    width: 100% !important;
+  }
 
-/*******************************
+  /*******************************
          Main featured
 *******************************/
 
-.main-teaser-item {
-  position: relative;
-  height: calc(~'100vh - 144px');
-  &::after {
-    position: absolute;
-    content: '';
-    display: block;
-    z-index: 1;
-    clip-path: polygon(0 0, 11% 0, 36% 100%, 0% 100%);
-    background: @primaryColor;
-    width: 100%;
-    height: 100%;
-    mix-blend-mode: multiply;
-    top: 0;
-    right: 0;
-  }
-  img {
-    width: 100%;
+  .main-teaser-item {
+    position: relative;
     height: calc(~'100vh - 144px');
-    object-fit: cover;
-  }
-  .main-teaser-item-content {
-    width: 20%;
-    color: white;
-    position: absolute;
-    bottom: 3rem;
-    left: 3rem;
-    z-index: 2;
-
-    .read-more a {
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      z-index: 1;
+      clip-path: polygon(0 0, 11% 0, 36% 100%, 0% 100%);
+      background: @primaryColor;
+      width: 100%;
+      height: 100%;
+      mix-blend-mode: multiply;
+      top: 0;
+      right: 0;
+    }
+    img {
+      width: 100%;
+      height: calc(~'100vh - 144px');
+      object-fit: cover;
+    }
+    .main-teaser-item-content {
+      width: 20%;
       color: white;
-    }
-    .main-teaser-item-description {
-      font-size: 1.5rem;
-    }
+      position: absolute;
+      bottom: 3rem;
+      left: 3rem;
+      z-index: 2;
 
-    .main-teaser-item-title {
-      font-size: 3rem;
+      .read-more a {
+        color: white;
+      }
+      .main-teaser-item-description {
+        font-size: 1.5rem;
+      }
+
+      .main-teaser-item-title {
+        font-size: 3rem;
+      }
     }
   }
-}
 
-/*******************************
+  /*******************************
         Colored teaser
 *******************************/
-@media only screen and (min-width: 1200px) {
-  .block.__grid.centered.three {
-    width: 1111px;
-    margin-left: auto;
-    margin-right: auto;
+  @media only screen and (min-width: 1200px) {
+    .block.__grid.centered.three {
+      width: 1111px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }
