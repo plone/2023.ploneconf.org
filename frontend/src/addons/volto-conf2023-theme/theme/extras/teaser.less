@@ -64,9 +64,19 @@
 
     .grid-text-wrapper-column {
       display: flex !important;
+    }
+    .grid-text-wrapper {
+      display: flex !important;
       flex-direction: column;
       justify-content: center;
       padding: 3rem 1.5rem !important;
+      max-width: 565px;
+      &.right {
+        margin-left: auto;
+      }
+      &.left {
+        margin-right: auto;
+      }
     }
 
     .home-teaser-item-title {

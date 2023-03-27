@@ -24,7 +24,7 @@ import { isInternalURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
 import StringToHTML from '../../helpers/StringToHTML';
-
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 const messages = defineMessages({
@@ -146,42 +146,49 @@ const TeaserHomeFeatured = (props) => {
               </Grid.Column>
             )}
             <Grid.Column className="grid-text-wrapper-column">
-              {data?.title && (
-                <h3 className="home-teaser-item-title">{data?.title}</h3>
-              )}
+              <div className={cx(data.imageSide, 'grid-text-wrapper')}>
+                {data?.title && (
+                  <h3 className="home-teaser-item-title">{data?.title}</h3>
+                )}
 
-              {data?.subtitle && (
-                <h4 className="home-teaser-item-subtitle">{data?.subtitle}</h4>
-              )}
-              {isEditMode ? (
-                <SlateEditor
-                  id={id}
-                  name={id}
-                  value={valueFromHtml}
-                  onChange={handleChange}
-                  onKeyDown={handleKey}
-                  block={block}
-                  selected={selected}
-                  properties={properties}
-                />
-              ) : (
-                <StringToHTML string={data?.richtext?.data} />
-              )}
-              <div className="read-more">
-                <MaybeWrap
-                  condition={!isEditMode}
-                  as={UniversalLink}
-                  href={href['@id']}
-                  target={
-                    data.openLinkInNewTab ||
-                    (openExternalLinkInNewTab && !isInternalURL(href['@id']))
-                      ? '_blank'
-                      : null
-                  }
-                >
-                  <FormattedMessage id="Read more" defaultMessage="Read more" />
-                  <Icon name="add" />
-                </MaybeWrap>
+                {data?.subtitle && (
+                  <h4 className="home-teaser-item-subtitle">
+                    {data?.subtitle}
+                  </h4>
+                )}
+                {isEditMode ? (
+                  <SlateEditor
+                    id={id}
+                    name={id}
+                    value={valueFromHtml}
+                    onChange={handleChange}
+                    onKeyDown={handleKey}
+                    block={block}
+                    selected={selected}
+                    properties={properties}
+                  />
+                ) : (
+                  <StringToHTML string={data?.richtext?.data} />
+                )}
+                <div className="read-more">
+                  <MaybeWrap
+                    condition={!isEditMode}
+                    as={UniversalLink}
+                    href={href['@id']}
+                    target={
+                      data.openLinkInNewTab ||
+                      (openExternalLinkInNewTab && !isInternalURL(href['@id']))
+                        ? '_blank'
+                        : null
+                    }
+                  >
+                    <FormattedMessage
+                      id="Read more"
+                      defaultMessage="Read more"
+                    />
+                    <Icon name="add" />
+                  </MaybeWrap>
+                </div>
               </div>
             </Grid.Column>
             {(href.hasPreviewImage || image) && data.imageSide === 'right' && (
