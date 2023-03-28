@@ -2,18 +2,19 @@
         Global Overrides
 *******************************/
 .loadThemeFonts();
+
 .siteroot .breadcrumbs {
   display: none;
 }
 
-.bg-primary{
+.bg-primary {
   background-color: @primaryColor;
 }
 
-.bg-secondary{
+.bg-secondary {
   background-color: @secondaryColor;
 }
 
-.bg-tertiary{
+.bg-tertiary {
   background-color: @tertiaryColor;
 }

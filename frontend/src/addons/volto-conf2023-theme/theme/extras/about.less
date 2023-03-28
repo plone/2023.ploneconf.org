@@ -2,22 +2,22 @@ body.section-about {
   #page-document {
     h2 {
       position: relative;
-      text-align: center;
-      font-size: 2rem;
-      border-bottom: 1px solid @tertiaryColor;
       padding-bottom: 1rem;
+      border-bottom: 1px solid @tertiaryColor;
       margin-bottom: 2rem;
+      font-size: 2rem;
+      text-align: center;
 
       &:before {
-        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -1px;
+        left: 0;
         width: 400px;
         height: 3px;
-        background: @tertiaryColor;
-        position: absolute;
-        left: 0;
-        bottom: -1px;
-        right: 0;
         margin: 0 auto;
+        background: @tertiaryColor;
+        content: '';
       }
     }
   }
