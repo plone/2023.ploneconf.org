@@ -58,40 +58,36 @@ const TeaserImageCard = (props) => {
               defaultImageSrc={defaultImageSrc}
             />
           )}
-          <div className="imaged-teaser-item-content">
-            {data?.head_title && (
-              <div className="imaged-teaser-item-head_title">
-                {data?.head_title}
-              </div>
-            )}
-            {data?.title && (
-              <h3 className="imaged-teaser-item-title">{data?.title}</h3>
-            )}
 
-            {data?.description && (
-              <div className="imaged-teaser-item-description">
-                {data?.description}
-              </div>
-            )}
-            <div className="read-more">
-              <MaybeWrap
-                condition={!isEditMode}
-                as={UniversalLink}
-                href={href['@id']}
-                target={
-                  data.openLinkInNewTab ||
-                  (openExternalLinkInNewTab && !isInternalURL(href['@id']))
-                    ? '_blank'
-                    : null
-                }
-              >
-                <FormattedMessage
-                  id="Google maps"
-                  defaultMessage="Google maps"
-                />
-                <Icon name="add" />
-              </MaybeWrap>
+          {data?.head_title && (
+            <div className="imaged-teaser-item-head_title h4">
+              {data?.head_title}
             </div>
+          )}
+          {data?.title && (
+            <h3 className="imaged-teaser-item-title">{data?.title}</h3>
+          )}
+
+          {data?.description && (
+            <div className="imaged-teaser-item-description">
+              {data?.description}
+            </div>
+          )}
+          <div className="read-more">
+            <MaybeWrap
+              condition={!isEditMode}
+              as={UniversalLink}
+              href={href['@id']}
+              target={
+                data.openLinkInNewTab ||
+                (openExternalLinkInNewTab && !isInternalURL(href['@id']))
+                  ? '_blank'
+                  : null
+              }
+            >
+              <FormattedMessage id="Google maps" defaultMessage="Google maps" />
+              <Icon name="add" />
+            </MaybeWrap>
           </div>
         </div>
       )}
