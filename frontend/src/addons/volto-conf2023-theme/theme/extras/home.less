@@ -8,6 +8,13 @@
     width: 100% !important;
   }
 
+  @media only screen and (max-width: 767px) {
+    #page-document {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+
   /*******************************
          Main featured
 *******************************/
@@ -49,6 +56,10 @@
       &::after {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
       }
+      .main-teaser-item-content {
+        width: 85% !important;
+        top: 30%;
+      }
     }
     .main-teaser-item-content {
       width: 20%;
@@ -77,6 +88,13 @@
   @media only screen and (min-width: 1200px) {
     .block.__grid.centered.three {
       width: 1111px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .block.__grid.centered.three {
+      width: 921px;
       margin-left: auto;
       margin-right: auto;
     }
