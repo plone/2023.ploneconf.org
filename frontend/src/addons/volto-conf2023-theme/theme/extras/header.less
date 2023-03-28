@@ -5,14 +5,18 @@
 .ui.basic.segment .header {
   .logo-nav-wrapper {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    .logo {
+      flex: auto;
+    }
   }
 }
 
 @media only screen and (max-width: 767px) {
   .logo img {
     width: 70%;
+    margin: 1rem 0;
   }
 }
 
@@ -21,21 +25,20 @@
 .tools {
   .ui.secondary.pointing.menu {
     .item {
-      margin: 0 0 0 2rem;
       color: @textColor;
       font-family: 'Barlow condensed';
-      font-size: 1.2rem;
       font-weight: bold;
+      font-size: 1.2rem;
+      margin: 0 0 0 2rem;
 
       &:hover {
         color: @secondaryColor;
       }
     }
-
     .item.active,
     .item:active {
-      border-bottom-color: transparent;
       color: @secondaryColor;
+      border-bottom-color: transparent;
     }
   }
 }
