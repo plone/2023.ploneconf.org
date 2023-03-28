@@ -135,7 +135,7 @@ const TeaserHomeFeatured = (props) => {
       )}
       {href && (
         <div className="home-teaser-item featured">
-          <Grid className="home-teaser-item-content" columns={2}>
+          <Grid className="home-teaser-item-content" columns={2} stackable>
             {(href.hasPreviewImage || image) && data.imageSide === 'left' && (
               <Grid.Column className="grid-image-wrapper-column">
                 <ImageContainer
