@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { Image } from 'semantic-ui-react';
+import { Image, Icon } from 'semantic-ui-react';
 import { map } from 'lodash';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
 import { useSelector, shallowEqual } from 'react-redux';
@@ -57,7 +57,7 @@ const Footer = ({ intl }) => {
               info@codesyntax.com
             </p>
           </div>
-          <div className="ploneconf-footer-vertical-logo">
+          <div className="ploneconf-footer-vertical-logo mobile hidden">
             <Image
               src={footerVerticalLogo}
               alt="Plone Conference 2023 Logo"
@@ -143,6 +143,17 @@ const Footer = ({ intl }) => {
                     </div>
                   ))
                 : null}
+              <div role="listitem" className="item social-network">
+                <UniversalLink href="https://www.youtube.com/c/PloneCMS">
+                  <Icon name="youtube square" size="large" />
+                </UniversalLink>
+                <UniversalLink href="https://twitter.com/plone">
+                  <Icon name="twitter square" size="large" />
+                </UniversalLink>
+                <UniversalLink href="https://www.facebook.com/Plone">
+                  <Icon name="facebook" size="large" />
+                </UniversalLink>
+              </div>
             </div>
           </div>
         </div>

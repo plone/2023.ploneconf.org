@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Message } from 'semantic-ui-react';
+import { Message } from 'semantic-ui-react';
 import { defineMessages, useIntl } from 'react-intl';
 import { MaybeWrap } from '@plone/volto/components';
 import { UniversalLink } from '@plone/volto/components';
@@ -30,33 +30,29 @@ const TeaserCard = (props) => {
       )}
       {href && (
         <div className={cx(data.color, 'card-teaser-item')}>
-          <Grid className="card-teaser-item-content">
-            <Grid.Row>
-              <MaybeWrap
-                condition={!isEditMode}
-                as={UniversalLink}
-                href={href['@id']}
-                target={data.openLinkInNewTab ? '_blank' : null}
-              >
-                <h2 className="card-teaser-item-title">{data?.title}</h2>
-              </MaybeWrap>
-            </Grid.Row>
+          <div className="card-teaser-item-content">
+            <MaybeWrap
+              condition={!isEditMode}
+              as={UniversalLink}
+              href={href['@id']}
+              className="stretched-link"
+              target={data.openLinkInNewTab ? '_blank' : null}
+            >
+              <h2 className="card-teaser-item-title">{data?.title}</h2>
+            </MaybeWrap>
+
             {data.subtitle && (
-              <Grid.Row>
-                <h3 className="card-teaser-item-subtitle">{data?.subtitle}</h3>
-              </Grid.Row>
+              <h3 className="card-teaser-item-subtitle">{data?.subtitle}</h3>
             )}
             {data.description && (
-              <Grid.Row className="card-teaser-item-description">
+              <div className="card-teaser-item-description">
                 {data?.description}
-              </Grid.Row>
+              </div>
             )}
             {data.dates && (
-              <Grid.Row className="card-teaser-item-dates">
-                {data?.dates}
-              </Grid.Row>
+              <div className="card-teaser-item-dates">{data?.dates}</div>
             )}
-          </Grid>
+          </div>
         </div>
       )}
     </>

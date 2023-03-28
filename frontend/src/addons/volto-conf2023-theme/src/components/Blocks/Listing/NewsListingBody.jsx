@@ -9,7 +9,11 @@ const NewsListingBody = (props) => {
 
   return (
     <div
-      className={homeBlock ? 'news-listing home-news-listing' : 'news-listing'}
+      className={
+        homeBlock
+          ? 'news-listing home-news-listing ui container'
+          : 'news-listing'
+      }
     >
       <h2 className="">
         <FormattedMessage id="News" defaultMessage="News" />
@@ -19,33 +23,30 @@ const NewsListingBody = (props) => {
           return (
             <Grid.Column key={index}>
               {item.image_field && (
-                <Grid.Row>
-                  <ConditionalLink item={item} condition={!isEditMode}>
-                    <Image
-                      src={`${item['@id']}/@@images/${item.image_field}`}
-                    />
-                  </ConditionalLink>
-                </Grid.Row>
-              )}
-              <Grid.Row>
                 <ConditionalLink item={item} condition={!isEditMode}>
-                  <h3 className="news-listing-title">{item.title}</h3>
+                  <Image src={`${item['@id']}/@@images/${item.image_field}`} />
                 </ConditionalLink>
-              </Grid.Row>
+              )}
+
+              <ConditionalLink item={item} condition={!isEditMode}>
+                <h3 className="news-listing-title">{item.title}</h3>
+              </ConditionalLink>
+
               {item.description && (
-                <Grid.Row>
-                  <span className="news-listing-description"></span>
+                <span className="news-listing-description">
                   {item.description}
-                </Grid.Row>
+                </span>
               )}
             </Grid.Column>
           );
         })}
       </Grid>
-      <a href={newsLink} className="news-listing-more">
-        <FormattedMessage id="More News" defaultMessage="More News" />
-        <Icon name="add" />
-      </a>
+      <div className="read-more">
+        <a href={newsLink} className="news-listing-more">
+          <FormattedMessage id="More News" defaultMessage="More News" />
+          <Icon name="add" />
+        </a>
+      </div>
     </div>
   );
 };

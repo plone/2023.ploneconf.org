@@ -1,1 +1,10 @@
+@import 'main';
+@import 'header';
+@import 'breadcrumb';
+@import 'tableofcontents';
+@import 'table';
+@import 'teaser';
+@import 'about';
+@import 'home';
+@import 'news';
 @import 'footer';

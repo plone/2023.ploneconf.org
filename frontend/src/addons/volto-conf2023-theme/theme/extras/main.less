@@ -1,0 +1,58 @@
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+}
+
+.h1 {
+  &:extend(h1);
+}
+
+.h2 {
+  &:extend(h2);
+}
+
+.h3 {
+  &:extend(h3);
+}
+
+.h4 {
+  &:extend(h4);
+}
+
+.documentFirstHeading {
+  border-bottom: none;
+  font-size: 3rem;
+  text-align: center;
+
+  &::before {
+    content: none;
+  }
+}
+
+/*******************************
+        More link
+*******************************/
+.read-more {
+  margin-top: 2rem;
+  font-weight: bold;
+
+  a {
+    display: flex;
+  }
+
+  i {
+    margin-left: 0.2rem;
+    font-size: 0.7rem;
+  }
+}

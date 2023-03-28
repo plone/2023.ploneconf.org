@@ -24,7 +24,7 @@ import { isInternalURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
 import StringToHTML from '../../helpers/StringToHTML';
-
+import cx from 'classnames';
 import PropTypes from 'prop-types';
 
 const messages = defineMessages({
@@ -40,13 +40,12 @@ const ImageContainer = (props) => {
   const { hasImageComponent, href, defaultImageSrc } = props;
   const Image = config.getComponent('Image').component || DefaultImage;
   return (
-    <div className="grid-image-wrapper">
-      <Image
-        src={hasImageComponent ? href : defaultImageSrc}
-        alt=""
-        loading="lazy"
-      />
-    </div>
+    <Image
+      className="home-featured-image"
+      src={hasImageComponent ? href : defaultImageSrc}
+      alt=""
+      loading="lazy"
+    />
   );
 };
 
@@ -136,9 +135,9 @@ const TeaserHomeFeatured = (props) => {
       )}
       {href && (
         <div className="home-teaser-item featured">
-          <Grid className="home-teaser-item-content" columns={2}>
+          <Grid className="home-teaser-item-content" columns={2} stackable>
             {(href.hasPreviewImage || image) && data.imageSide === 'left' && (
-              <Grid.Column>
+              <Grid.Column className="grid-image-wrapper-column">
                 <ImageContainer
                   hasImageComponent={hasImageComponent}
                   href={href}
@@ -146,52 +145,54 @@ const TeaserHomeFeatured = (props) => {
                 />
               </Grid.Column>
             )}
-            <Grid.Column>
-              <Grid.Row>
+            <Grid.Column className="grid-text-wrapper-column">
+              <div className={cx(data.imageSide, 'grid-text-wrapper')}>
                 {data?.title && (
-                  <h2 className="home-teaser-item-title">{data?.title}</h2>
+                  <h3 className="home-teaser-item-title">{data?.title}</h3>
                 )}
-              </Grid.Row>
-              {data?.subtitle && (
-                <Grid.Row>
-                  <h3 className="home-teaser-item-subtitle">
+
+                {data?.subtitle && (
+                  <h4 className="home-teaser-item-subtitle">
                     {data?.subtitle}
-                  </h3>
-                </Grid.Row>
-              )}
-              {isEditMode ? (
-                <SlateEditor
-                  id={id}
-                  name={id}
-                  value={valueFromHtml}
-                  onChange={handleChange}
-                  onKeyDown={handleKey}
-                  block={block}
-                  selected={selected}
-                  properties={properties}
-                />
-              ) : (
-                <StringToHTML string={data?.richtext?.data} />
-              )}
-              <Grid.Row className="home-teaser-item-read-more">
-                <MaybeWrap
-                  condition={!isEditMode}
-                  as={UniversalLink}
-                  href={href['@id']}
-                  target={
-                    data.openLinkInNewTab ||
-                    (openExternalLinkInNewTab && !isInternalURL(href['@id']))
-                      ? '_blank'
-                      : null
-                  }
-                >
-                  <FormattedMessage id="Read more" defaultMessage="Read more" />
-                  <Icon name="add" />
-                </MaybeWrap>
-              </Grid.Row>
+                  </h4>
+                )}
+                {isEditMode ? (
+                  <SlateEditor
+                    id={id}
+                    name={id}
+                    value={valueFromHtml}
+                    onChange={handleChange}
+                    onKeyDown={handleKey}
+                    block={block}
+                    selected={selected}
+                    properties={properties}
+                  />
+                ) : (
+                  <StringToHTML string={data?.richtext?.data} />
+                )}
+                <div className="read-more">
+                  <MaybeWrap
+                    condition={!isEditMode}
+                    as={UniversalLink}
+                    href={href['@id']}
+                    target={
+                      data.openLinkInNewTab ||
+                      (openExternalLinkInNewTab && !isInternalURL(href['@id']))
+                        ? '_blank'
+                        : null
+                    }
+                  >
+                    <FormattedMessage
+                      id="Read more"
+                      defaultMessage="Read more"
+                    />
+                    <Icon name="add" />
+                  </MaybeWrap>
+                </div>
+              </div>
             </Grid.Column>
             {(href.hasPreviewImage || image) && data.imageSide === 'right' && (
-              <Grid.Column>
+              <Grid.Column className="grid-image-wrapper-column">
                 <ImageContainer
                   hasImageComponent={hasImageComponent}
                   href={href}

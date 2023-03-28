@@ -30,6 +30,7 @@ import {
   TeaserHomeFeatured,
   TeaserCard,
   TeaserMainFeatured,
+  TeaserImageCard,
   HomeFeaturedSchemaEnhancer,
   CardSchemaEnhancer,
   MainFeaturedSchemaEnhancer,
@@ -102,6 +103,11 @@ const applyConfig = (config) => {
       title: 'Main Featured',
       template: TeaserMainFeatured,
       schemaEnhancer: MainFeaturedSchemaEnhancer,
+    },
+    {
+      id: 'imagedCard',
+      title: 'Imaged Card',
+      template: TeaserImageCard,
     },
   ];
 

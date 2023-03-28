@@ -27,7 +27,7 @@ const ImageContainer = (props) => {
   return <Image src={hasImageComponent ? href : defaultImageSrc} alt="" />;
 };
 
-const TeaserHomeFeatured = (props) => {
+const TeaserImageCard = (props) => {
   const { data, isEditMode } = props;
   const intl = useIntl();
   const href = data.href?.[0];
@@ -43,14 +43,14 @@ const TeaserHomeFeatured = (props) => {
     <>
       {!href && isEditMode && (
         <Message>
-          <div className="main-teaser-item">
+          <div className="imaged-teaser-item">
             <img src={imageBlockSVG} alt="" />
             <p>{intl.formatMessage(messages.PleaseChooseContent)}</p>
           </div>
         </Message>
       )}
       {href && (
-        <div className="main-teaser-item featured">
+        <div className="imaged-teaser-item">
           {(href.hasPreviewImage || image) && (
             <ImageContainer
               hasImageComponent={hasImageComponent}
@@ -58,32 +58,36 @@ const TeaserHomeFeatured = (props) => {
               defaultImageSrc={defaultImageSrc}
             />
           )}
-          <div className="main-teaser-item-content">
-            {data?.title && (
-              <h1 className="main-teaser-item-title">{data?.title}</h1>
-            )}
 
-            {data?.description && (
-              <div className="main-teaser-item-description">
-                {data?.description}
-              </div>
-            )}
-            <div className="read-more">
-              <MaybeWrap
-                condition={!isEditMode}
-                as={UniversalLink}
-                href={href['@id']}
-                target={
-                  data.openLinkInNewTab ||
-                  (openExternalLinkInNewTab && !isInternalURL(href['@id']))
-                    ? '_blank'
-                    : null
-                }
-              >
-                <FormattedMessage id="Read more" defaultMessage="Read more" />
-                <Icon name="add" />
-              </MaybeWrap>
+          {data?.head_title && (
+            <div className="imaged-teaser-item-head_title h4">
+              {data?.head_title}
             </div>
+          )}
+          {data?.title && (
+            <h3 className="imaged-teaser-item-title">{data?.title}</h3>
+          )}
+
+          {data?.description && (
+            <div className="imaged-teaser-item-description">
+              {data?.description}
+            </div>
+          )}
+          <div className="read-more">
+            <MaybeWrap
+              condition={!isEditMode}
+              as={UniversalLink}
+              href={href['@id']}
+              target={
+                data.openLinkInNewTab ||
+                (openExternalLinkInNewTab && !isInternalURL(href['@id']))
+                  ? '_blank'
+                  : null
+              }
+            >
+              <FormattedMessage id="Google maps" defaultMessage="Google maps" />
+              <Icon name="add" />
+            </MaybeWrap>
           </div>
         </div>
       )}
@@ -91,9 +95,9 @@ const TeaserHomeFeatured = (props) => {
   );
 };
 
-TeaserHomeFeatured.propTypes = {
+TeaserImageCard.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
   isEditMode: PropTypes.bool,
 };
 
-export default TeaserHomeFeatured;
+export default TeaserImageCard;
