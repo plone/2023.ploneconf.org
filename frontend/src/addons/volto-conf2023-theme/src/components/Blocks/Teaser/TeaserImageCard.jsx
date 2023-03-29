@@ -73,22 +73,27 @@ const TeaserImageCard = (props) => {
               {data?.description}
             </div>
           )}
-          <div className="read-more">
-            <MaybeWrap
-              condition={!isEditMode}
-              as={UniversalLink}
-              href={href['@id']}
-              target={
-                data.openLinkInNewTab ||
-                (openExternalLinkInNewTab && !isInternalURL(href['@id']))
-                  ? '_blank'
-                  : null
-              }
-            >
-              <FormattedMessage id="Google maps" defaultMessage="Google maps" />
-              <Icon name="add" />
-            </MaybeWrap>
-          </div>
+          {data?.mapslink && (
+            <div className="read-more">
+              <MaybeWrap
+                condition={!isEditMode}
+                as={UniversalLink}
+                href={href['@id']}
+                target={
+                  data.openLinkInNewTab ||
+                  (openExternalLinkInNewTab && !isInternalURL(href['@id']))
+                    ? '_blank'
+                    : null
+                }
+              >
+                <FormattedMessage
+                  id="Google maps"
+                  defaultMessage="Google maps"
+                />
+                <Icon name="add" />
+              </MaybeWrap>
+            </div>
+          )}
         </div>
       )}
     </>
