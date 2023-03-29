@@ -1,6 +1,8 @@
 import { CardSchemaEnhancer } from './CardSchemaEnhancer';
 import { HomeFeaturedSchemaEnhancer } from './HomeFeaturedSchemaEnhancer';
 import { MainFeaturedSchemaEnhancer } from './MainFeaturedSchemaEnhancer';
+import { ImagedCardSchemaEnhancer } from './ImagedCardSchemaEnhancer';
+
 import ColoredTeaserCard from './ColoredTeaserCard';
 import Teaser2ColumnsGreyFeatured from './Teaser2ColumnsGreyFeatured';
 import Teaser2ColumnsFeatured from './Teaser2ColumnsFeatured';
@@ -17,4 +19,5 @@ export {
   HomeFeaturedSchemaEnhancer,
   CardSchemaEnhancer,
   MainFeaturedSchemaEnhancer,
+  ImagedCardSchemaEnhancer,
 };

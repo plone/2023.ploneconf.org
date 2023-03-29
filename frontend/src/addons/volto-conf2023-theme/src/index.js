@@ -35,6 +35,7 @@ import {
   HomeFeaturedSchemaEnhancer,
   CardSchemaEnhancer,
   MainFeaturedSchemaEnhancer,
+  ImagedCardSchemaEnhancer,
 } from './components/Blocks/Teaser';
 import TeaserBlockDefaultBody from '@plone/volto/components/manage/Blocks/Teaser/DefaultBody';
 
@@ -115,6 +116,7 @@ const applyConfig = (config) => {
       id: 'imagedCard',
       title: 'Imaged Card',
       template: TeaserImageCard,
+      schemaEnhancer: ImagedCardSchemaEnhancer,
     },
   ];
 
