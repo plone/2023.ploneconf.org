@@ -5,7 +5,7 @@
 [![Backend Tests](https://github.com/plone/2023.ploneconf.org/actions/workflows/backend-testing.yml/badge.svg)](https://github.com/plone/2023.ploneconf.org/actions/workflows/backend-testing.yml)
 [![Frontend Tests](https://github.com/plone/2023.ploneconf.org/actions/workflows/frontend-testing.yml/badge.svg)](https://github.com/plone/2023.ploneconf.org/actions/workflows/frontend-testing.yml)
 
-Plone Conference 2023
+Plone Conference 2023 Website
 
 ## Quick start
 
