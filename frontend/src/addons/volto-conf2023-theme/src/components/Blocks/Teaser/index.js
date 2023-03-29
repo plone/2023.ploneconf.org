@@ -1,14 +1,17 @@
 import { CardSchemaEnhancer } from './CardSchemaEnhancer';
 import { HomeFeaturedSchemaEnhancer } from './HomeFeaturedSchemaEnhancer';
 import { MainFeaturedSchemaEnhancer } from './MainFeaturedSchemaEnhancer';
-import TeaserCard from './TeaserCard';
-import TeaserHomeFeatured from './TeaserHomeFeatured';
+import ColoredTeaserCard from './ColoredTeaserCard';
+import Teaser2ColumnsGreyFeatured from './Teaser2ColumnsGreyFeatured';
+import Teaser2ColumnsFeatured from './Teaser2ColumnsFeatured';
+
 import TeaserImageCard from './TeaserImageCard';
 import TeaserMainFeatured from './TeaserMainFeatured';
 
 export {
-  TeaserHomeFeatured,
-  TeaserCard,
+  Teaser2ColumnsGreyFeatured,
+  Teaser2ColumnsFeatured,
+  ColoredTeaserCard,
   TeaserMainFeatured,
   TeaserImageCard,
   HomeFeaturedSchemaEnhancer,

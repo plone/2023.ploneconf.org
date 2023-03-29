@@ -49,7 +49,7 @@ const ImageContainer = (props) => {
   );
 };
 
-const TeaserHomeFeatured = (props) => {
+const Teaser2ColumnsFeatured = (props) => {
   const {
     data,
     isEditMode,
@@ -170,25 +170,6 @@ const TeaserHomeFeatured = (props) => {
                 ) : (
                   <StringToHTML string={data?.richtext?.data} />
                 )}
-                <div className="read-more">
-                  <MaybeWrap
-                    condition={!isEditMode}
-                    as={UniversalLink}
-                    href={href['@id']}
-                    target={
-                      data.openLinkInNewTab ||
-                      (openExternalLinkInNewTab && !isInternalURL(href['@id']))
-                        ? '_blank'
-                        : null
-                    }
-                  >
-                    <FormattedMessage
-                      id="Read more"
-                      defaultMessage="Read more"
-                    />
-                    <Icon name="add" />
-                  </MaybeWrap>
-                </div>
               </div>
             </Grid.Column>
             {(href.hasPreviewImage || image) && data.imageSide === 'right' && (
@@ -207,9 +188,9 @@ const TeaserHomeFeatured = (props) => {
   );
 };
 
-TeaserHomeFeatured.propTypes = {
+Teaser2ColumnsFeatured.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
   isEditMode: PropTypes.bool,
 };
 
-export default TeaserHomeFeatured;
+export default Teaser2ColumnsFeatured;

@@ -14,7 +14,7 @@ const messages = defineMessages({
   },
 });
 
-const TeaserCard = (props) => {
+const ColoredTeaserCard = (props) => {
   const { data, isEditMode } = props;
   const intl = useIntl();
   const href = data.href?.[0];
@@ -59,9 +59,9 @@ const TeaserCard = (props) => {
   );
 };
 
-TeaserCard.propTypes = {
+ColoredTeaserCard.propTypes = {
   data: PropTypes.objectOf(PropTypes.any).isRequired,
   isEditMode: PropTypes.bool,
 };
 
-export default TeaserCard;
+export default ColoredTeaserCard;

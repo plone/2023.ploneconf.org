@@ -27,8 +27,9 @@ import {
 
 // import TeaserPersonBody from './components/Blocks/Teaser/TeaserPersonBody';
 import {
-  TeaserHomeFeatured,
-  TeaserCard,
+  Teaser2ColumnsGreyFeatured,
+  Teaser2ColumnsFeatured,
+  ColoredTeaserCard,
   TeaserMainFeatured,
   TeaserImageCard,
   HomeFeaturedSchemaEnhancer,
@@ -88,14 +89,20 @@ const applyConfig = (config) => {
     },
     {
       id: 'homeFeatured',
-      title: 'Home Featured',
-      template: TeaserHomeFeatured,
+      title: '2 columns Grey bg',
+      template: Teaser2ColumnsGreyFeatured,
+      schemaEnhancer: HomeFeaturedSchemaEnhancer,
+    },
+    {
+      id: '2columns',
+      title: '2 columns',
+      template: Teaser2ColumnsFeatured,
       schemaEnhancer: HomeFeaturedSchemaEnhancer,
     },
     {
       id: 'teaserCard',
-      title: 'Teaser Card',
-      template: TeaserCard,
+      title: 'Colored Card',
+      template: ColoredTeaserCard,
       schemaEnhancer: CardSchemaEnhancer,
     },
     {

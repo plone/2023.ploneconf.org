@@ -106,9 +106,21 @@
   /*******************************
         Home featured teaser
 *******************************/
-  .home-teaser-item-content .text-wrapper-column {
-    max-width: 555px;
-    margin-left: auto;
+
+  .grid-text-wrapper {
+    display: flex !important;
+    max-width: 565px;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 1.5rem !important;
+
+    &.right {
+      margin-left: auto;
+    }
+
+    &.left {
+      margin-right: auto;
+    }
   }
   /*******************************
         Home news
