@@ -13,7 +13,7 @@ Plone Conference 2023 Website
 
 - Python 3.11
 - Node 16
-- yarn 3
+- yarn
 - Docker
 
 ### Install
