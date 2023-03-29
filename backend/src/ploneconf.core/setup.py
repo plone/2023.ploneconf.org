@@ -47,7 +47,7 @@ setup(
     install_requires=[
         "setuptools",
         "Plone",
-        "collective.volto.formsupport",
+        "collective.volto.formsupport[norobots]",
         "pas.plugins.authomatic",
         "kitconcept.seo",
         "collective.exportimport",
