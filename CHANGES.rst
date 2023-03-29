@@ -1,5 +1,12 @@
-Unreleased
-----------
+2023-03-29 1.0.0 
+----------------
+
+- 2023 site design
+  [libargutxi & ionlizarazu]
+
+
+2022 site
+---------
 
 - restore hard space in Nuclia block text
   [tkimnguyen]
