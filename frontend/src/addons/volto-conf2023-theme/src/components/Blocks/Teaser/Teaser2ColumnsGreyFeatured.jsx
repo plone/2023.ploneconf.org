@@ -152,13 +152,13 @@ const Teaser2ColumnsGreyFeatured = (props) => {
             <Grid.Column className="grid-text-wrapper-column">
               <div className={cx(data.imageSide, 'grid-text-wrapper')}>
                 {data?.title && (
-                  <h3 className="home-teaser-item-title">{data?.title}</h3>
+                  <h2 className="home-teaser-item-title">{data?.title}</h2>
                 )}
 
                 {data?.subtitle && (
-                  <h4 className="home-teaser-item-subtitle">
+                  <h3 className="home-teaser-item-subtitle">
                     {data?.subtitle}
-                  </h4>
+                  </h3>
                 )}
                 {isEditMode ? (
                   <SlateEditor
