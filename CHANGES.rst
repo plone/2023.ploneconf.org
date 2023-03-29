@@ -1,4 +1,10 @@
-2023-03-29 1.0.0 
+2023-03-29 1.1
+----------------
+
+- teaser variations
+  [libargutxi & ionlizarazu]
+
+2023-03-29 1.0.0
 ----------------
 
 - 2023 site design
