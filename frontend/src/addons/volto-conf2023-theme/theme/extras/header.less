@@ -5,8 +5,9 @@
 .ui.basic.segment .header {
   .logo-nav-wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
     .logo {
       flex: auto;
     }
@@ -25,20 +26,21 @@
 .tools {
   .ui.secondary.pointing.menu {
     .item {
+      margin: 0 0 0 2rem;
       color: @textColor;
       font-family: 'Barlow condensed';
-      font-weight: bold;
       font-size: 1.2rem;
-      margin: 0 0 0 2rem;
+      font-weight: bold;
 
       &:hover {
         color: @secondaryColor;
       }
     }
+
     .item.active,
     .item:active {
-      color: @secondaryColor;
       border-bottom-color: transparent;
+      color: @secondaryColor;
     }
   }
 }

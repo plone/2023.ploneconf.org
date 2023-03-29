@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { defineMessages, useIntl, FormattedMessage } from 'react-intl';
+import { defineMessages, useIntl } from 'react-intl';
 import { Provider, useSelector } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import configureStore from 'redux-mock-store';
-import { Grid, Message, Icon } from 'semantic-ui-react';
+import { Grid, Message } from 'semantic-ui-react';
 
 import { handleKey } from '@plone/volto-slate/blocks/Text/keyboard';
 import deserialize from '@plone/volto-slate/editor/deserialize';
@@ -15,12 +15,9 @@ import {
   createEmptyParagraph,
   normalizeExternalData,
 } from '@plone/volto-slate/utils';
-import { MaybeWrap } from '@plone/volto/components';
-import { UniversalLink } from '@plone/volto/components';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
 import { getTeaserImageURL } from '@plone/volto/components/manage/Blocks/Teaser/utils';
 import { flattenToAppURL } from '@plone/volto/helpers';
-import { isInternalURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 
 import StringToHTML from '../../helpers/StringToHTML';
@@ -65,7 +62,6 @@ const Teaser2ColumnsFeatured = (props) => {
   const align = data?.styles?.align;
 
   const hasImageComponent = config.getComponent('Image').component;
-  const { openExternalLinkInNewTab } = config.settings;
   const defaultImageSrc =
     href && flattenToAppURL(getTeaserImageURL({ href, image, align }));
 
