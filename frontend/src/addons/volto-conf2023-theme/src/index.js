@@ -53,6 +53,9 @@ import Training from './components/Views/Training';
 
 import reducers from './reducers';
 
+import installStyledH2Plugin from './editor/plugins/StyledH2';
+import { StyledH2 } from './editor/plugins/StyledH2/constants';
+
 const applyConfig = (config) => {
   config.settings = {
     ...config.settings,
@@ -292,6 +295,15 @@ const applyConfig = (config) => {
       view: [],
     },
   };
+  config.settings.slate.toolbarButtons = [
+    ...(config.settings.slate.toolbarButtons || []),
+    StyledH2,
+  ];
+  config.settings.slate.expandedToolbarButtons = [
+    ...(config.settings.slate.expandedToolbarButtons || []),
+    StyledH2,
+  ];
+  config = installStyledH2Plugin(config);
 
   return config;
 };
