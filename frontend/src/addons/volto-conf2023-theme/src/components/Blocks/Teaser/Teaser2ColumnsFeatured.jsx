@@ -141,7 +141,9 @@ const Teaser2ColumnsFeatured = (props) => {
                 />
               </Grid.Column>
             )}
-            <Grid.Column className="grid-text-wrapper-column">
+            <Grid.Column
+              className={cx(data.imageSide, 'grid-text-wrapper-column')}
+            >
               <div className={cx(data.imageSide, 'grid-text-wrapper')}>
                 {data?.title && (
                   <h3 className="home-teaser-item-title">{data?.title}</h3>

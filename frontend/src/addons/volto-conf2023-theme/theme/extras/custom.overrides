@@ -4,7 +4,10 @@
 @import 'tableofcontents';
 @import 'table';
 @import 'teaser';
-@import 'about';
+@import 'underlinedheader';
 @import 'home';
 @import 'news';
+@import 'sponsors';
+@import 'forms';
+@import 'button';
 @import 'footer';
