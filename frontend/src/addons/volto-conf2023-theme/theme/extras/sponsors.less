@@ -3,9 +3,23 @@
   flex-wrap: wrap;
 
   .sponsor {
-    max-width: 20%;
+    max-width: 25%;
 
     img {
+      max-width: 100%;
+    }
+  }
+}
+
+#patron .sponsorList .sponsor {
+  max-width: 33%;
+}
+
+@media only screen and (max-width: 767px) {
+  .sponsorList {
+    display: flex;
+    flex-direction: column;
+    .sponsor {
       max-width: 100%;
     }
   }
