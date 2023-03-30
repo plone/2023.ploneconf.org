@@ -51,6 +51,8 @@ setup(
         "pas.plugins.authomatic",
         "kitconcept.seo",
         "collective.exportimport",
+        "collective.z3cform.norobots",
+        "collective.honeypot",
     ],
     extras_require={
         "test": [
