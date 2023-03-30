@@ -6,11 +6,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Sponsor from './Sponsor';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import bronzeSponsorSVG from '../../icons/bronzeSponsor.svg';
-import silverSponsorSVG from '../../icons/silverSponsor.svg';
-import goldSponsorSVG from '../../icons/goldSponsor.svg';
-import patronSVG from '../../icons/patron.svg';
-import Icon from '@plone/volto/components/theme/Icon/Icon';
 
 /**
  * SponsorLevel function.
@@ -18,18 +13,6 @@ import Icon from '@plone/volto/components/theme/Icon/Icon';
  * @returns {JSX.Element} Markup of the a SponsorLevel option.
  */
 function SponsorLevel({ levelId, title, sponsors }) {
-  const iconSponsor = {
-    diamond: null,
-    platinum: null,
-    gold: goldSponsorSVG,
-    silver: silverSponsorSVG,
-    bronze: bronzeSponsorSVG,
-    supporting: null,
-    oss: null,
-    patron: patronSVG,
-    organizer: null,
-  };
-
   return (
     <div id={levelId} className="sponsorLevel">
       <h3 className="underlined-header">
@@ -44,6 +27,7 @@ function SponsorLevel({ levelId, title, sponsors }) {
           <FormattedMessage id="of" defaultMessage="of" />
         )}
       </h3>
+
       <div className="sponsorList">
         {sponsors &&
           sponsors.map(function (sponsor, i) {
