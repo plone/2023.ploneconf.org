@@ -1,3 +1,9 @@
+2023-03-30 1.4
+--------------
+
+- Install captcha products for volto-form-block
+  [erral]
+
 2023-03-30 1.3
 --------------
 
