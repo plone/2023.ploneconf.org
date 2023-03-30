@@ -1,10 +1,16 @@
+2023-03-30 1.3
+--------------
+
+- Frontend styles
+  [libargutxi]
+
 2023-03-29 1.2
 --------------
 
 - Frontend styles
   [ionlizarazu & libargutxi]
 
-- Install captcha 
+- Install captcha
   [erral]
 
 2023-03-29 1.1
