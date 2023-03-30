@@ -23,7 +23,7 @@ function Sponsors({ content }) {
   }, [dispatch]);
 
   return (
-    <div className="sponsors">
+    <div className="sponsors ui container">
       <div className="wrapper-aside text">
         <h2 className="aside-title">
           <FormattedMessage id="Sponsors" defaultMessage="Sponsors" />
