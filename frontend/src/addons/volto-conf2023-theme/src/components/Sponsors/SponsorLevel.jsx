@@ -32,7 +32,7 @@ function SponsorLevel({ levelId, title, sponsors }) {
 
   return (
     <div id={levelId} className="sponsorLevel">
-      <h3>
+      <h3 className="underlined-header">
         {levelId === 'patron' && (
           <FormattedMessage id="Under the" defaultMessage="Under the" />
         )}{' '}
@@ -44,11 +44,6 @@ function SponsorLevel({ levelId, title, sponsors }) {
           <FormattedMessage id="of" defaultMessage="of" />
         )}
       </h3>
-      <div className="sponsor_icon">
-        {iconSponsor[levelId] && (
-          <Icon name={iconSponsor[levelId]} title={title} size="200px" />
-        )}
-      </div>
       <div className="sponsorList">
         {sponsors &&
           sponsors.map(function (sponsor, i) {
