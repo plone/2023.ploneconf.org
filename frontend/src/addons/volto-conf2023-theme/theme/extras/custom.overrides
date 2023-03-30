@@ -4,7 +4,9 @@
 @import 'tableofcontents';
 @import 'table';
 @import 'teaser';
-@import 'about';
+@import 'underlinedheader';
 @import 'home';
 @import 'news';
+@import 'forms';
+@import 'button';
 @import 'footer';
