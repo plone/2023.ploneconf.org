@@ -16,6 +16,7 @@
   "addons": [
     "@eeacms/volto-accordion-block",
     "@plone-collective/volto-tito-block",
+    "@plone-collective/volto-authomatic",
     "volto-form-block",
     "@kitconcept/volto-separator-block",
     "@kitconcept/volto-blocks-grid",
