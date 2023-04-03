@@ -52,14 +52,16 @@ services:
         # SERVICE
         - traefik.http.services.testing_ploneconf-backend.loadbalancer.server.port=8080
         # MIDDLEWARES
-        ### ClassicUI Access Authentication
+        ### basic_auth Authentication ClassicUI & Zope
         - traefik.http.middlewares.testing_ploneconf-backend-auth.basicauth.users=ploneconf:$$2y$$05$$SLsKIKgK.NlD.64HMV42hOUNi3pQM/T.iW4qziWs0xcKHzkaa8T8C
+        - traefik.http.middlewares.testing_ploneconf-zope-auth.basicauth.users=zopeadmin:$$apr1$$7jQv8Qcp$$IzN7fnLaFrWJR7Ob5cljK/
         ### Backend ++api++ VHM
         - "traefik.http.middlewares.testing_ploneconf-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
         - "traefik.http.middlewares.testing_ploneconf-vhm.replacepathregex.replacement=/VirtualHostBase/https/testing.ploneconf.org/Plone/++api++/VirtualHostRoot/$$1"
         ### Backend ClassicUI VHM
         - "traefik.http.middlewares.testing_ploneconf-vhm-classicui.replacepathregex.regex=^/ClassicUI($$|/.*)"
         - "traefik.http.middlewares.testing_ploneconf-vhm-classicui.replacepathregex.replacement=/VirtualHostBase/https/testing.ploneconf.org/Plone/VirtualHostRoot/_vh_ClassicUI/$$1"
+
         # ROUTES
         ## ploneconf.org API
         - traefik.http.routers.testing_ploneconf-backend.rule=Host(`testing.ploneconf.org`) && (PathPrefix(`/++api++`))
@@ -73,6 +75,12 @@ services:
         - traefik.http.routers.testing_ploneconf-classicui.tls=true
         - traefik.http.routers.testing_ploneconf-classicui.service=testing_ploneconf-backend
         - traefik.http.routers.testing_ploneconf-classicui.middlewares=gzip,testing_ploneconf-backend-auth,testing_ploneconf-vhm-classicui
+        ### ploneconf.org /zope - protected with basic auth (prevent unauthorized acess)
+        - traefik.http.routers.testing_ploneconf-zope.rule=Host(`testing.ploneconf.org`) && (PathPrefix(`/zopemanage`))
+        - traefik.http.routers.testing_ploneconf-zope.entrypoints=https
+        - traefik.http.routers.testing_ploneconf-zope.tls=true
+        - traefik.http.routers.testing_ploneconf-zope.service=testing_ploneconf-backend
+        - traefik.http.routers.testing_ploneconf-zope.middlewares=gzip,testing_ploneconf-zope-auth
 
 networks:
   public:
