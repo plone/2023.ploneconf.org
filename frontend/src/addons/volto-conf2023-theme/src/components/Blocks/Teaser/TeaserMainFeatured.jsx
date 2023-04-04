@@ -5,7 +5,6 @@ import { Message, Icon } from 'semantic-ui-react';
 import { MaybeWrap } from '@plone/volto/components';
 import { UniversalLink } from '@plone/volto/components';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
-import { getTeaserImageURL } from '@plone/volto/components/manage/Blocks/Teaser/utils';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { isInternalURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
