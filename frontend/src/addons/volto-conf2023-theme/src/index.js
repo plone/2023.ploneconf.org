@@ -53,8 +53,10 @@ import Training from './components/Views/Training';
 
 import reducers from './reducers';
 
-import installStyledH2Plugin from './editor/plugins/StyledH2';
+import { BlockButton } from '@plone/volto-slate/editor/ui';
 import { StyledH2 } from './editor/plugins/StyledH2/constants';
+import StyledH2Element from './editor/plugins/StyledH2/StyledH2Element';
+import tooltipSVG from '@plone/volto/icons/help.svg';
 
 const applyConfig = (config) => {
   config.settings = {
@@ -295,6 +297,15 @@ const applyConfig = (config) => {
       view: [],
     },
   };
+  config.settings.slate.buttons['StyledH2'] = (props) => (
+    <BlockButton
+      format="StyledH2"
+      icon={tooltipSVG}
+      title="StyledH2"
+      {...props}
+    />
+  );
+  config.settings.slate.elements['StyledH2'] = StyledH2Element;
   config.settings.slate.toolbarButtons = [
     ...(config.settings.slate.toolbarButtons || []),
     StyledH2,
@@ -303,7 +314,6 @@ const applyConfig = (config) => {
     ...(config.settings.slate.expandedToolbarButtons || []),
     StyledH2,
   ];
-  config = installStyledH2Plugin(config);
 
   return config;
 };
