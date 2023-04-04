@@ -1,3 +1,15 @@
+2023-03-30 1.6
+--------------
+
+- Enable volto-authomatic
+  [fredvd]
+
+2023-03-30 1.5
+--------------
+
+- Sponsors grid styles
+  [libargutxi]
+
 2023-03-30 1.4
 --------------
 

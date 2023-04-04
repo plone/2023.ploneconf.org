@@ -1,7 +1,6 @@
-version: '3.3'
+version: "3.3"
 
 services:
-
   frontend:
     image: ghcr.io/plone/ploneconf-2023-frontend:${STACK_PARAM:-latest}
     environment:
@@ -38,8 +37,8 @@ services:
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-plone}'"
     networks:
-    - testing_ploneconf
-    - public
+      - testing_ploneconf
+      - public
     deploy:
       replicas: 1
       placement:
@@ -61,7 +60,9 @@ services:
         ### Backend ClassicUI VHM
         - "traefik.http.middlewares.testing_ploneconf-vhm-classicui.replacepathregex.regex=^/ClassicUI($$|/.*)"
         - "traefik.http.middlewares.testing_ploneconf-vhm-classicui.replacepathregex.replacement=/VirtualHostBase/https/testing.ploneconf.org/Plone/VirtualHostRoot/_vh_ClassicUI/$$1"
-
+        ### Backend zopeadmin root path
+        - "traefik.http.middlewares.testing_ploneconf-root-zopeadmin.replacepathregex.regex=^/zopeadmin($$|/.*)"
+        - "traefik.http.middlewares.testing_ploneconf-root-zopeadmin.replacepathregex.replacement=/$$1"
         # ROUTES
         ## ploneconf.org API
         - traefik.http.routers.testing_ploneconf-backend.rule=Host(`testing.ploneconf.org`) && (PathPrefix(`/++api++`))
@@ -76,12 +77,11 @@ services:
         - traefik.http.routers.testing_ploneconf-classicui.service=testing_ploneconf-backend
         - traefik.http.routers.testing_ploneconf-classicui.middlewares=gzip,testing_ploneconf-backend-auth,testing_ploneconf-vhm-classicui
         ### ploneconf.org /zope - protected with basic auth (prevent unauthorized acess)
-        - traefik.http.routers.testing_ploneconf-zope.rule=Host(`testing.ploneconf.org`) && (PathPrefix(`/zopemanage`))
-        - traefik.http.routers.testing_ploneconf-zope.entrypoints=https
-        - traefik.http.routers.testing_ploneconf-zope.tls=true
-        - traefik.http.routers.testing_ploneconf-zope.service=testing_ploneconf-backend
-        - traefik.http.routers.testing_ploneconf-zope.middlewares=gzip,testing_ploneconf-zope-auth
-
+        - traefik.http.routers.testing_ploneconf-zopeadmin.rule=Host(`testing.ploneconf.org`) && (PathPrefix(`/zopeadmin`))
+        - traefik.http.routers.testing_ploneconf-zopeadmin.entrypoints=https
+        - traefik.http.routers.testing_ploneconf-zopeadmin.tls=true
+        - traefik.http.routers.testing_ploneconf-zopeadmin.service=testing_ploneconf-backend
+        - traefik.http.routers.testing_ploneconf-zopeadmin.middlewares=gzip,testing_ploneconf-zope-auth,testing_ploneconf-root-zopeadmin
 networks:
   public:
     external: true

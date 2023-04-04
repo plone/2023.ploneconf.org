@@ -1,7 +1,6 @@
-version: '3.3'
+version: "3.3"
 
 services:
-
   frontend:
     image: ghcr.io/plone/ploneconf-2023-frontend:${STACK_PARAM:-latest}
     environment:
@@ -38,8 +37,8 @@ services:
     environment:
       RELSTORAGE_DSN: "dbname='${DB_NAME:-plone}' user='${DB_USER:-plone}' host='${DB_HOST:-db}' password='${DB_PASSWORD:-plone}'"
     networks:
-    - 2023_ploneconf
-    - public
+      - 2023_ploneconf
+      - public
     deploy:
       replicas: 2
       placement:
