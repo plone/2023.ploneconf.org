@@ -32,7 +32,8 @@
     "@plone-collective/volto-authomatic": "1.3.0",
     "@plone-collective/volto-tito-block": "0.1.0",
     "react-compound-timer": "1.2.0",
-    "volto-form-block": "3.0.1"
+    "volto-form-block": "3.0.1",
+    "react-lazy-load-image-component": "1.5.4"
   },
   "devDependencies": {
     "@plone/scripts": "*"

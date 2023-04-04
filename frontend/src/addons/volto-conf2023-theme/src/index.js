@@ -80,6 +80,16 @@ const applyConfig = (config) => {
         url: 'http://youtube.com/c/PloneCMS',
       },
     ],
+    pictureOptions: {
+      grid: [
+        { media: '(min-width: 768px)', image: 'teaser' },
+        { media: '(max-width: 767px)', image: 'large' },
+      ],
+      mainimage: [
+        { media: '(min-width: 768px)', image: 'huge' },
+        { media: '(max-width: 767px)', image: 'large' },
+      ],
+    },
   };
 
   config.views.contentTypesViews.Person = Person;

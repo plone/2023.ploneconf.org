@@ -1,12 +1,17 @@
 import React from 'react';
 import { injectIntl, FormattedMessage } from 'react-intl';
-import { Image, Icon, Grid } from 'semantic-ui-react';
+import { Icon, Grid } from 'semantic-ui-react';
 import { ConditionalLink } from '@plone/volto/components';
+import Picture from 'volto-conf2023-theme/components/Picture/Picture';
+import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
+import { useSelector } from 'react-redux';
 
 const NewsListingBody = (props) => {
-  const { items, isEditMode, homeBlock } = props;
+  const { items, isEditMode, homeBlock, moment: momentlib } = props;
   const newsLink = '/news';
-
+  const lang = useSelector((state) => state.intl.locale);
+  const moment = momentlib.default;
+  moment.locale(lang);
   return (
     <div
       className={
@@ -24,10 +29,17 @@ const NewsListingBody = (props) => {
             <Grid.Column key={index}>
               {item.image_field && (
                 <ConditionalLink item={item} condition={!isEditMode}>
-                  <Image src={`${item['@id']}/@@images/${item.image_field}`} />
+                  <Picture
+                    source="grid"
+                    imageBase={`${item['@id']}/@@images/${item.image_field}`}
+                    alt={item.title}
+                  ></Picture>
                 </ConditionalLink>
               )}
 
+              <div className="news-date">
+                {item.effective && <p>{moment(item.effective).format('L')}</p>}
+              </div>
               <ConditionalLink item={item} condition={!isEditMode}>
                 <h3 className="news-listing-title">{item.title}</h3>
               </ConditionalLink>
@@ -51,4 +63,4 @@ const NewsListingBody = (props) => {
   );
 };
 
-export default injectIntl(NewsListingBody);
+export default injectLazyLibs(['moment'])(injectIntl(NewsListingBody));
