@@ -18,10 +18,10 @@ import {
 import { MaybeWrap } from '@plone/volto/components';
 import { UniversalLink } from '@plone/volto/components';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
-import { getTeaserImageURL } from '@plone/volto/components/manage/Blocks/Teaser/utils';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { isInternalURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
+import Picture from 'volto-conf2023-theme/components/Picture/Picture';
 
 import StringToHTML from '../../helpers/StringToHTML';
 import cx from 'classnames';
@@ -34,18 +34,19 @@ const messages = defineMessages({
       'Please choose an existing content as source for this element',
   },
 });
-const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
 
 const ImageContainer = (props) => {
-  const { hasImageComponent, href, defaultImageSrc } = props;
-  const Image = config.getComponent('Image').component || DefaultImage;
+  const { image, alt } = props;
   return (
-    <Image
+    <Picture
+      source="teaser2columns"
       className="home-featured-image"
-      src={hasImageComponent ? href : defaultImageSrc}
-      alt=""
-      loading="lazy"
-    />
+      content={image}
+      imageBase={flattenToAppURL(
+        `${image['@id']}/@@images/${image.image_field}`,
+      )}
+      alt={alt}
+    ></Picture>
   );
 };
 
@@ -62,12 +63,8 @@ const Teaser2ColumnsGreyFeatured = (props) => {
   const intl = useIntl();
   const href = data.href?.[0];
   const image = data.preview_image?.[0];
-  const align = data?.styles?.align;
 
-  const hasImageComponent = config.getComponent('Image').component;
   const { openExternalLinkInNewTab } = config.settings;
-  const defaultImageSrc =
-    href && flattenToAppURL(getTeaserImageURL({ href, image, align }));
 
   const editor = React.useMemo(() => makeEditor(), []);
   const token = useSelector((state) => state.userSession.token);
@@ -142,11 +139,7 @@ const Teaser2ColumnsGreyFeatured = (props) => {
           >
             {(href.hasPreviewImage || image) && data.imageSide === 'left' && (
               <Grid.Column className="grid-image-wrapper-column">
-                <ImageContainer
-                  hasImageComponent={hasImageComponent}
-                  href={href}
-                  defaultImageSrc={defaultImageSrc}
-                />
+                <ImageContainer image={image} alt={data?.title} />
               </Grid.Column>
             )}
             <Grid.Column className="grid-text-wrapper-column">
@@ -197,11 +190,7 @@ const Teaser2ColumnsGreyFeatured = (props) => {
             </Grid.Column>
             {(href.hasPreviewImage || image) && data.imageSide === 'right' && (
               <Grid.Column className="grid-image-wrapper-column">
-                <ImageContainer
-                  hasImageComponent={hasImageComponent}
-                  href={href}
-                  defaultImageSrc={defaultImageSrc}
-                />
+                <ImageContainer image={image} alt={data?.title} />
               </Grid.Column>
             )}
           </Grid>
