@@ -1,3 +1,9 @@
+2023-04-04 1.7
+--------------
+
+- Picture source and frontend styles
+  [libargutxi]
+
 2023-03-30 1.6
 --------------
 
