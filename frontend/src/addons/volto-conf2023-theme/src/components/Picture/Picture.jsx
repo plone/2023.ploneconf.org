@@ -34,7 +34,10 @@ const Picture = ({
               srcSet={
                 scales
                   ? flattenToAppURL(
-                      `${content['@id']}/${scales[source.image]?.download}`,
+                      `${content['@id']}/${
+                        scales[source.image]?.download ||
+                        content?.image_scales?.image?.[0]?.download
+                      }`,
                     )
                   : `${imageBase}/${source.image}`
               }
