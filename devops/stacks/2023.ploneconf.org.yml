@@ -31,7 +31,7 @@ services:
         - traefik.http.routers.2023_ploneconf-frontend.tls=true
         - traefik.http.routers.2023_ploneconf-frontend.tls.certresolver=le
         - traefik.http.routers.2023_ploneconf-frontend.service=2023_ploneconf-frontend
-        - traefik.http.routers.2023_ploneconf-frontend.middlewares=gzip,2023_ploneconf-frontend-auth
+        - traefik.http.routers.2023_ploneconf-frontend.middlewares=gzip
 
   backend:
     image: ghcr.io/plone/ploneconf-2023-backend:${STACK_PARAM:-latest}
