@@ -2,6 +2,7 @@ import React from 'react';
 import { Image } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { flattenToAppURL } from '@plone/volto/helpers';
 
 const Picture = ({
   imageBase,
@@ -14,6 +15,7 @@ const Picture = ({
 }) => {
   const pictureOptions = config.settings.pictureOptions;
   let sources = [];
+  const scales = content?.image_scales?.image?.[0]?.scales || null;
   if (Object.keys(pictureOptions).includes(source)) {
     sources = pictureOptions[source];
   } else {
@@ -27,11 +29,15 @@ const Picture = ({
             <source
               key={key}
               media={source.media}
-              width={content ? content.image.scales[source.image].width : null}
-              height={
-                content ? content.image.scales[source.image].height : null
+              width={scales ? scales[source.image]?.width : null}
+              height={scales ? scales[source.image]?.height : null}
+              srcSet={
+                scales
+                  ? flattenToAppURL(
+                      `${content['@id']}/${scales[source.image]?.download}`,
+                    )
+                  : `${imageBase}/${source.image}`
               }
-              srcSet={`${imageBase}/${source.image}`}
             />
           );
         })}

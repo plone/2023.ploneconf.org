@@ -5,8 +5,7 @@ import { Message, Icon } from 'semantic-ui-react';
 import { MaybeWrap } from '@plone/volto/components';
 import { UniversalLink } from '@plone/volto/components';
 import imageBlockSVG from '@plone/volto/components/manage/Blocks/Image/block-image.svg';
-import { flattenToAppURL } from '@plone/volto/helpers';
-import { isInternalURL } from '@plone/volto/helpers';
+import { flattenToAppURL, isInternalURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
 import Picture from 'volto-conf2023-theme/components/Picture/Picture';
 
@@ -22,9 +21,12 @@ const messages = defineMessages({
 
 const ImageContainer = (props) => {
   const { image, alt } = props;
+  console.log(image);
   return (
     <Picture
       source="mainimage"
+      lazy={false}
+      content={image}
       imageBase={flattenToAppURL(
         `${image['@id']}/@@images/${image.image_field}`,
       )}
