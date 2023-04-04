@@ -21,7 +21,6 @@ const messages = defineMessages({
 
 const ImageContainer = (props) => {
   const { image, alt } = props;
-  console.log(image);
   return (
     <Picture
       source="mainimage"
