@@ -89,6 +89,10 @@ const applyConfig = (config) => {
         { media: '(min-width: 768px)', image: 'huge' },
         { media: '(max-width: 767px)', image: 'large' },
       ],
+      teaser2columns: [
+        { media: '(min-width: 768px)', image: 'larger' },
+        { media: '(max-width: 767px)', image: 'large' },
+      ],
     },
   };
 
