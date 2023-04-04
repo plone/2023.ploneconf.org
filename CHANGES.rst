@@ -1,3 +1,9 @@
+2023-04-04 1.8
+--------------
+
+- Picture source default url
+  [libargutxi]
+
 2023-04-04 1.7
 --------------
 
