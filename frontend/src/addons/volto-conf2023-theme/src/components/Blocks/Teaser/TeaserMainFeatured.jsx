@@ -9,6 +9,7 @@ import { getTeaserImageURL } from '@plone/volto/components/manage/Blocks/Teaser/
 import { flattenToAppURL } from '@plone/volto/helpers';
 import { isInternalURL } from '@plone/volto/helpers';
 import config from '@plone/volto/registry';
+import Picture from 'volto-conf2023-theme/components/Picture/Picture';
 
 import PropTypes from 'prop-types';
 
@@ -19,12 +20,18 @@ const messages = defineMessages({
       'Please choose an existing content as source for this element',
   },
 });
-const DefaultImage = (props) => <img {...props} alt={props.alt || ''} />;
 
 const ImageContainer = (props) => {
-  const { hasImageComponent, href, defaultImageSrc } = props;
-  const Image = config.getComponent('Image').component || DefaultImage;
-  return <Image src={hasImageComponent ? href : defaultImageSrc} alt="" />;
+  const { image, alt } = props;
+  return (
+    <Picture
+      source="mainimage"
+      imageBase={flattenToAppURL(
+        `${image['@id']}/@@images/${image.image_field}`,
+      )}
+      alt={alt}
+    ></Picture>
+  );
 };
 
 const TeaserHomeFeatured = (props) => {
@@ -32,12 +39,8 @@ const TeaserHomeFeatured = (props) => {
   const intl = useIntl();
   const href = data.href?.[0];
   const image = data.preview_image?.[0];
-  const align = data?.styles?.align;
 
-  const hasImageComponent = config.getComponent('Image').component;
   const { openExternalLinkInNewTab } = config.settings;
-  const defaultImageSrc =
-    href && flattenToAppURL(getTeaserImageURL({ href, image, align }));
 
   return (
     <>
@@ -52,11 +55,7 @@ const TeaserHomeFeatured = (props) => {
       {href && (
         <div className="main-teaser-item featured">
           {(href.hasPreviewImage || image) && (
-            <ImageContainer
-              hasImageComponent={hasImageComponent}
-              href={href}
-              defaultImageSrc={defaultImageSrc}
-            />
+            <ImageContainer image={image} alt={data?.title} />
           )}
           <div className="main-teaser-item-content">
             {data?.title && (

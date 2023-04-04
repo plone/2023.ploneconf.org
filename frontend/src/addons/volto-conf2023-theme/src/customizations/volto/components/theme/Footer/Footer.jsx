@@ -125,7 +125,6 @@ const Footer = ({ intl }) => {
                 ? map(siteActions, (item) => (
                     <div role="listitem" className="item" key={item.id}>
                       <UniversalLink
-                        className="item"
                         href={
                           settings.isMultilingual
                             ? `/${lang}/${
