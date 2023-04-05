@@ -1,6 +1,6 @@
 import React from 'react';
 
-const StyledH2Element = (props) => {
+const H2StyledElement = (props) => {
   const { attributes, children } = props;
 
   return (
@@ -10,4 +10,4 @@ const StyledH2Element = (props) => {
   );
 };
 
-export default StyledH2Element;
+export default H2StyledElement;
