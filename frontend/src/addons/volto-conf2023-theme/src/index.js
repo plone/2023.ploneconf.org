@@ -54,8 +54,8 @@ import Training from './components/Views/Training';
 import reducers from './reducers';
 
 import { BlockButton } from '@plone/volto-slate/editor/ui';
-import { StyledH2 } from './editor/plugins/StyledH2/constants';
-import StyledH2Element from './editor/plugins/StyledH2/StyledH2Element';
+import { H2Styled } from './editor/plugins/H2Styled/constants';
+import H2StyledElement from './editor/plugins/H2Styled/H2StyledElement';
 import tooltipSVG from '@plone/volto/icons/help.svg';
 
 const applyConfig = (config) => {
@@ -311,22 +311,23 @@ const applyConfig = (config) => {
       view: [],
     },
   };
-  config.settings.slate.buttons['StyledH2'] = (props) => (
+  config.settings.slate.buttons['H2Styled'] = (props) => (
     <BlockButton
-      format="StyledH2"
+      format="H2Styled"
       icon={tooltipSVG}
-      title="StyledH2"
+      title="H2Styled"
       {...props}
     />
   );
-  config.settings.slate.elements['StyledH2'] = StyledH2Element;
+  config.settings.slate.elements['H2Styled'] = H2StyledElement;
   config.settings.slate.toolbarButtons = [
     ...(config.settings.slate.toolbarButtons || []),
-    StyledH2,
+    H2Styled,
   ];
+  config.settings.slate.topLevelTargetElements.push('H2Styled');
   config.settings.slate.expandedToolbarButtons = [
     ...(config.settings.slate.expandedToolbarButtons || []),
-    StyledH2,
+    H2Styled,
   ];
 
   return config;
