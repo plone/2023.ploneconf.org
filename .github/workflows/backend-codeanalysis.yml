@@ -1,5 +1,4 @@
-name: Backend test, release and deploy to testing.ploneconf.org
-
+name: Backend code analysis on branches
 on:
   workflow_dispatch:
   push:
