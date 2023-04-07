@@ -18,6 +18,9 @@ RUN <<EOT
     ./bin/pip install -r /app/requirements.txt
 EOT
 
+# Precompile .mo files
+RUN /app/bin/python /compile_mo.py
+
 FROM plone/server-prod-config:${PLONE_VERSION}
 
 LABEL maintainer="Plone Foundation <conf@plone.org>" \
