@@ -18,7 +18,7 @@ RUN <<EOT
     ./bin/pip install -r /app/requirements.txt
 EOT
 
-# Precompile .mo files for installed add'ons
+# Precompile .mo files for installed add'ons.
 RUN /app/bin/python /compile_mo.py
 
 FROM plone/server-prod-config:${PLONE_VERSION}
