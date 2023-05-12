@@ -32,9 +32,21 @@ const NewsItemView = ({ content }) => {
               {content.subtitle && ` - ${content.subtitle}`}
             </h1>
           )}
-          {content.effective && <div className="news-date">{moment(content?.effective).format('LL')}</div>}
-          {content.image && <Picture source="newsitem" imageBase={`${content['@id']}/@@images/image`} alt={content.title}></Picture>}
-          {content.description && <p className="documentDescription">{content.description}</p>}
+          {content.effective && (
+            <div className="news-date">
+              {moment(content?.effective).format('LL')}
+            </div>
+          )}
+          {content.image && (
+            <Picture
+              source="newsitem"
+              imageBase={`${content['@id']}/@@images/image`}
+              alt={content.title}
+            ></Picture>
+          )}
+          {content.description && (
+            <p className="documentDescription">{content.description}</p>
+          )}
           {hasBlocksData(content) && <RenderBlocks content={content} />}
         </Grid.Column>
         <Grid.Column width={1}></Grid.Column>

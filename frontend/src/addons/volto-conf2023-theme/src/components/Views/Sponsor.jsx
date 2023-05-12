@@ -25,10 +25,14 @@ const Sponsor = ({ content }) => {
         <Grid.Row>
           <Grid.Column width={2}></Grid.Column>
           <Grid.Column width={8}>
-            {content.title && <h1 className="documentFirstHeading">{content.title}</h1>}
+            {content.title && (
+              <h1 className="documentFirstHeading">{content.title}</h1>
+            )}
             <p>
               The link address is:
-              <UniversalLink href={remoteUrl}>{flattenToAppURL(remoteUrl)}</UniversalLink>
+              <UniversalLink href={remoteUrl}>
+                {flattenToAppURL(remoteUrl)}
+              </UniversalLink>
             </p>
           </Grid.Column>
           <Grid.Column width={2}></Grid.Column>

@@ -26,7 +26,17 @@ import {
 } from './components/Blocks/Listing';
 
 // import TeaserPersonBody from './components/Blocks/Teaser/TeaserPersonBody';
-import { Teaser2ColumnsGreyFeatured, Teaser2ColumnsFeatured, ColoredTeaserCard, TeaserMainFeatured, TeaserImageCard, HomeFeaturedSchemaEnhancer, CardSchemaEnhancer, MainFeaturedSchemaEnhancer, ImagedCardSchemaEnhancer } from './components/Blocks/Teaser';
+import {
+  Teaser2ColumnsGreyFeatured,
+  Teaser2ColumnsFeatured,
+  ColoredTeaserCard,
+  TeaserMainFeatured,
+  TeaserImageCard,
+  HomeFeaturedSchemaEnhancer,
+  CardSchemaEnhancer,
+  MainFeaturedSchemaEnhancer,
+  ImagedCardSchemaEnhancer,
+} from './components/Blocks/Teaser';
 import TeaserBlockDefaultBody from '@plone/volto/components/manage/Blocks/Teaser/DefaultBody';
 
 import calendarSVG from '@plone/volto/icons/calendar.svg';
@@ -314,11 +324,24 @@ const applyConfig = (config) => {
       view: [],
     },
   };
-  config.settings.slate.buttons['H2Styled'] = (props) => <BlockButton format="H2Styled" icon={tooltipSVG} title="H2Styled" {...props} />;
+  config.settings.slate.buttons['H2Styled'] = (props) => (
+    <BlockButton
+      format="H2Styled"
+      icon={tooltipSVG}
+      title="H2Styled"
+      {...props}
+    />
+  );
   config.settings.slate.elements['H2Styled'] = H2StyledElement;
-  config.settings.slate.toolbarButtons = [...(config.settings.slate.toolbarButtons || []), H2Styled];
+  config.settings.slate.toolbarButtons = [
+    ...(config.settings.slate.toolbarButtons || []),
+    H2Styled,
+  ];
   config.settings.slate.topLevelTargetElements.push('H2Styled');
-  config.settings.slate.expandedToolbarButtons = [...(config.settings.slate.expandedToolbarButtons || []), H2Styled];
+  config.settings.slate.expandedToolbarButtons = [
+    ...(config.settings.slate.expandedToolbarButtons || []),
+    H2Styled,
+  ];
 
   return config;
 };
