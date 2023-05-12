@@ -26,17 +26,7 @@ import {
 } from './components/Blocks/Listing';
 
 // import TeaserPersonBody from './components/Blocks/Teaser/TeaserPersonBody';
-import {
-  Teaser2ColumnsGreyFeatured,
-  Teaser2ColumnsFeatured,
-  ColoredTeaserCard,
-  TeaserMainFeatured,
-  TeaserImageCard,
-  HomeFeaturedSchemaEnhancer,
-  CardSchemaEnhancer,
-  MainFeaturedSchemaEnhancer,
-  ImagedCardSchemaEnhancer,
-} from './components/Blocks/Teaser';
+import { Teaser2ColumnsGreyFeatured, Teaser2ColumnsFeatured, ColoredTeaserCard, TeaserMainFeatured, TeaserImageCard, HomeFeaturedSchemaEnhancer, CardSchemaEnhancer, MainFeaturedSchemaEnhancer, ImagedCardSchemaEnhancer } from './components/Blocks/Teaser';
 import TeaserBlockDefaultBody from '@plone/volto/components/manage/Blocks/Teaser/DefaultBody';
 
 import calendarSVG from '@plone/volto/icons/calendar.svg';
@@ -48,8 +38,10 @@ import zoomSVG from '@plone/volto/icons/zoom.svg';
 
 import Keynote from './components/Views/Keynote';
 import Person from './components/Views/Person';
+import Sponsor from './components/Views/Sponsor';
 import Talk from './components/Views/Talk';
 import Training from './components/Views/Training';
+import NewsItemView from './customizations/volto/components/theme/View/NewsItemView';
 
 import reducers from './reducers';
 
@@ -93,6 +85,11 @@ const applyConfig = (config) => {
         { media: '(min-width: 768px)', image: 'larger' },
         { media: '(max-width: 767px)', image: 'large' },
       ],
+      newsitem: [
+        { media: '(min-width: 1200px)', image: 'larger' },
+        { media: '(min-width: 992px) and (max-width: 1199px)', image: 'large' },
+        { media: '(max-width: 991px)', image: 'teaser' },
+      ],
     },
   };
 
@@ -100,6 +97,12 @@ const applyConfig = (config) => {
   config.views.contentTypesViews.Talk = Talk;
   config.views.contentTypesViews.Training = Training;
   config.views.contentTypesViews.Keynote = Keynote;
+  config.views.contentTypesViews.Sponsor = Sponsor;
+  config.views.contentTypesViews['News Item'] = NewsItemView;
+
+  // Needed for deleting title from block
+  config.blocks.requiredBlocks = [];
+
   const teaserVariations = [
     {
       id: 'default',
@@ -311,24 +314,11 @@ const applyConfig = (config) => {
       view: [],
     },
   };
-  config.settings.slate.buttons['H2Styled'] = (props) => (
-    <BlockButton
-      format="H2Styled"
-      icon={tooltipSVG}
-      title="H2Styled"
-      {...props}
-    />
-  );
+  config.settings.slate.buttons['H2Styled'] = (props) => <BlockButton format="H2Styled" icon={tooltipSVG} title="H2Styled" {...props} />;
   config.settings.slate.elements['H2Styled'] = H2StyledElement;
-  config.settings.slate.toolbarButtons = [
-    ...(config.settings.slate.toolbarButtons || []),
-    H2Styled,
-  ];
+  config.settings.slate.toolbarButtons = [...(config.settings.slate.toolbarButtons || []), H2Styled];
   config.settings.slate.topLevelTargetElements.push('H2Styled');
-  config.settings.slate.expandedToolbarButtons = [
-    ...(config.settings.slate.expandedToolbarButtons || []),
-    H2Styled,
-  ];
+  config.settings.slate.expandedToolbarButtons = [...(config.settings.slate.expandedToolbarButtons || []), H2Styled];
 
   return config;
 };
