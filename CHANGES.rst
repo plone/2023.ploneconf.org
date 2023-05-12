@@ -1,3 +1,10 @@
+2023-05-12 1.11
+--------------
+
+- Sponsor and News Item view
+- Small style changes
+  [libargutxi]
+
 2023-04-18 1.10
 --------------
 
