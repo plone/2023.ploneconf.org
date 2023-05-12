@@ -37,6 +37,13 @@
   &.tertiary {
     background-color: @tertiaryColor;
   }
+  &:hover {
+    transform: rotate(2deg);
+    transition: transform 0.3s;
+    .card-teaser-item-dates {
+      font-weight: 600;
+    }
+  }
 }
 
 .stretched-link::after {

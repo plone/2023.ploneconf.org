@@ -48,8 +48,10 @@ import zoomSVG from '@plone/volto/icons/zoom.svg';
 
 import Keynote from './components/Views/Keynote';
 import Person from './components/Views/Person';
+import Sponsor from './components/Views/Sponsor';
 import Talk from './components/Views/Talk';
 import Training from './components/Views/Training';
+import NewsItemView from './customizations/volto/components/theme/View/NewsItemView';
 
 import reducers from './reducers';
 
@@ -93,6 +95,11 @@ const applyConfig = (config) => {
         { media: '(min-width: 768px)', image: 'larger' },
         { media: '(max-width: 767px)', image: 'large' },
       ],
+      newsitem: [
+        { media: '(min-width: 1200px)', image: 'larger' },
+        { media: '(min-width: 992px) and (max-width: 1199px)', image: 'large' },
+        { media: '(max-width: 991px)', image: 'teaser' },
+      ],
     },
   };
 
@@ -100,6 +107,12 @@ const applyConfig = (config) => {
   config.views.contentTypesViews.Talk = Talk;
   config.views.contentTypesViews.Training = Training;
   config.views.contentTypesViews.Keynote = Keynote;
+  config.views.contentTypesViews.Sponsor = Sponsor;
+  config.views.contentTypesViews['News Item'] = NewsItemView;
+
+  // Needed for deleting title from block
+  config.blocks.requiredBlocks = [];
+
   const teaserVariations = [
     {
       id: 'default',
