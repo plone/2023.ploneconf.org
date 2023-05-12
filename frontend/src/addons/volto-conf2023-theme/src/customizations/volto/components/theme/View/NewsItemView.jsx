@@ -6,12 +6,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Container } from 'semantic-ui-react';
-import { flattenToAppURL, flattenHTMLToAppURL, hasBlocksData } from '@plone/volto/helpers';
+import { hasBlocksData } from '@plone/volto/helpers';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 import Picture from 'volto-conf2023-theme/components/Picture/Picture';
-import { UniversalLink } from '@plone/volto/components';
 /**
  * NewsItemView view component class.
  * @function NewsItemView
