@@ -17,13 +17,13 @@ const PresentersInfo = (props) => {
   const content = props.content;
   const presenters = content.presenters;
   return (
-    <div className="speaker-image-wrapper">
+    <div className="listing-image-wrapper">
       {presenters?.map((item) => (
-        <div className="listing-item" key={item['@id']}>
+        <div className="speakers-preview" key={item['@id']}>
           <Link to={flattenToAppURL(item['@id'])}>
             <Popup
               trigger={
-                <div className="listing-image-wrapper">
+                <div className="speakers-preview-image">
                   {!item?.image?.download && (
                     <img src={DefaultImageSVG} alt="" />
                   )}
@@ -39,35 +39,6 @@ const PresentersInfo = (props) => {
             >
               <Popup.Content>{item.title ? item.title : item.id}</Popup.Content>
             </Popup>
-
-            <div className="listing-body">
-              <ul className="person-social">
-                {item.github && (
-                  <li>
-                    <a
-                      href={`https://github.com/${item.github}`}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <Icon name={githubSVG} size="18px" />
-                    </a>
-                  </li>
-                )}
-
-                {item.twitter && (
-                  <li>
-                    <a
-                      href={`https://twitter.com/${item.twitter.replace(
-                        '@',
-                        '',
-                      )}`}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <Icon name={twitterSVG} size="18px" />
-                    </a>
-                  </li>
-                )}
-              </ul>
-            </div>
           </Link>
         </div>
       ))}

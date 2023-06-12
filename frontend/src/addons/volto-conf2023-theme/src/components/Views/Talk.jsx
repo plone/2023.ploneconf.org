@@ -37,8 +37,16 @@ const Talk = ({ content }) => {
         </div>
         <PresentersInfo content={content} />
       </div>
-      {(content.slides_url || content.slides_embed) && <h3>Slides</h3>}
-      {content.slides_url && <a href={content.slides_url}>Slides URL</a>}
+      {(content.slides_url || content.slides_embed) && (
+        <h3 className="underlined-header">Slides</h3>
+      )}
+      {content.slides_url && (
+        <div className="slide-link-wrapper">
+          <a className="ui button primary" href={content.slides_url}>
+            Slides URL
+          </a>
+        </div>
+      )}
       {content.slides_embed && (
         <div
           dangerouslySetInnerHTML={{
@@ -48,7 +56,7 @@ const Talk = ({ content }) => {
       )}
       {content.video_url && (
         <>
-          <h3>Recorded talk</h3>
+          <h3 className="underlined-header">Recorded talk</h3>
           <div className="video-inner">
             <Embed
               id={

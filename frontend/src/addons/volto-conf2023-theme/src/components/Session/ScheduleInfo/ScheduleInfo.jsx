@@ -19,7 +19,7 @@ const ScheduleInfo = (props) => {
     <div className={'session-schedule'}>
       {start && (
         <Label.Group className={'session-schedule-date'}>
-          Date:{' '}
+          <strong>Date:</strong>{' '}
           <Label>
             <When start={start} end={end} whole_day={false} open_end={false} />
           </Label>{' '}
@@ -32,7 +32,7 @@ const ScheduleInfo = (props) => {
       )}
       {track?.length > 0 && (
         <Label.Group className={'talk-schedule-track'}>
-          Track:{' '}
+          <strong>Track:</strong>{' '}
           {track.map((item) => (
             <Label key={item.token} className={`track-${item.token}`}>
               {item.title}

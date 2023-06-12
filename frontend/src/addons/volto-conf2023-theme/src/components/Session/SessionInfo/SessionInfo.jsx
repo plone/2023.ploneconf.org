@@ -14,7 +14,7 @@ const SessionInfo = (props) => {
     <div className={'session-info'}>
       {audience && (
         <Label.Group>
-          Audience:{' '}
+          <strong>Audience:</strong>{' '}
           {audience.map((audience) => (
             <Label
               key={audience.token}
@@ -27,7 +27,7 @@ const SessionInfo = (props) => {
       )}
       {level && (
         <Label.Group>
-          Level:{' '}
+          <strong>Level:</strong>{' '}
           {level.map((level) => (
             <Label key={level.token} className={`level-${level.token}`}>
               {level.title}

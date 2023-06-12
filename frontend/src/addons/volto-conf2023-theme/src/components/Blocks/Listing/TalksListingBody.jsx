@@ -6,6 +6,7 @@ import cx from 'classnames';
 import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
 import { Popup } from 'semantic-ui-react';
+import PresentersInfo from '../../../components/Session/PresentersInfo/PresentersInfo';
 
 const TalksListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
@@ -55,7 +56,7 @@ const TalksListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
                   />
                 )}
               </div>
-              <div className="listing-image-wrapper">
+              {/* <div className="listing-image-wrapper">
                 {item?.presenters?.map((speaker) => (
                   <Popup
                     trigger={
@@ -80,7 +81,8 @@ const TalksListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
                     <Popup.Content>{speaker.title}</Popup.Content>
                   </Popup>
                 ))}
-              </div>
+              </div> */}
+              <PresentersInfo content={item} />
             </ConditionalLink>
           </div>
         ))}
