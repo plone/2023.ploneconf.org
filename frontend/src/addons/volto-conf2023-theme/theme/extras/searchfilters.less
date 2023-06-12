@@ -1,0 +1,138 @@
+.filter-search-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  .filters {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: start;
+    width: 70%;
+  }
+  .search-wrapper {
+    width: 30%;
+  }
+}
+
+div#fullscreen-filter-modal.ui.fullscreen.modal {
+  top: 0 !important;
+  width: 100% !important;
+  margin-top: 0 !important;
+}
+.modal-filters {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 10000;
+}
+.modal-filters-background {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  overflow: auto;
+}
+.modal-filters-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: @primaryColor;
+  color: white;
+  text-transform: uppercase;
+  min-height: 900px;
+  .fieldset {
+    border: none;
+    margin: 2rem 0;
+    .item > .header {
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+  }
+  .ui.list > .item .header {
+    font-weight: bold;
+    text-transform: uppercase !important;
+    margin: 1rem 0;
+  }
+  .ui.list .list > .item .header {
+    font-weight: normal;
+    margin: 0 0 0.5rem 0;
+  }
+  .ui.checkbox label::before {
+    background-color: @primaryColor;
+    box-shadow: none;
+    border: 1px solid @tertiaryColor;
+  }
+  .ui.checkbox input:focus ~ label {
+    color: @tertiaryColor;
+  }
+  .icon-close {
+    background: url('../assets/images/i-close_w.svg') no-repeat top left;
+    width: 36px;
+    height: 36px;
+    display: block;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-filters-container {
+    width: 70%;
+  }
+}
+@media (min-width: 768px) {
+  .modal-filters-container {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .modal-filters-container {
+    width: 20%;
+  }
+}
+.modal-filters-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem;
+}
+
+.modal-filters-body {
+  padding: 0 1rem;
+}
+.apply-filters-button {
+  padding: 0 1rem;
+  margin-top: 3rem;
+}
+@media (max-width: 991px) {
+  .modal-filters-header {
+    padding: 1rem 2rem !important;
+  }
+  .filter-search-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    .filters {
+      width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    .search-wrapper {
+      width: 100%;
+    }
+    // .filter-listing {
+    //   display: none;
+    // }
+  }
+}
+.modal-filters-container .ui.list > .item .header {
+  margin: 1rem 0;
+  font-weight: 500;
+}
+.checkbox-facet .item {
+  padding: 0 !important;
+}
+.ui.basic.segment.facet {
+  padding-top: 0;
+  padding-bottom: 0;
+}

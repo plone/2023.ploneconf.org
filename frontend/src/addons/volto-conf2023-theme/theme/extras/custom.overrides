@@ -4,6 +4,7 @@
 @import 'tableofcontents';
 @import 'table';
 @import 'teaser';
+@import 'searchfilters';
 @import 'underlinedheader';
 @import 'home';
 @import 'news';
