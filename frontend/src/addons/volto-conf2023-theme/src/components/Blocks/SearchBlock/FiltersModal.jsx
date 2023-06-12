@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, TransitionablePortal } from 'semantic-ui-react';
-import { Button } from 'semantic-ui-react';
+import { Button, Icon, Label } from 'semantic-ui-react';
 import { isEmpty } from 'lodash';
 
 function FiltersModal(props) {
@@ -20,14 +20,13 @@ function FiltersModal(props) {
       Object.keys(facets).includes(field.value) &&
       !isEmpty(facets[field.value]),
   ).length;
-  const totalfiltertext = totalFilters ? ' ' + totalFilters : '';
+  const totalfiltertext = totalFilters ? ' >> ' + totalFilters : ' >>';
   return (
     <>
-      <Button
-        className="ui primary button"
-        content={data.facetsTitle + totalfiltertext}
-        onClick={openModal}
-      />
+      <Button className="ui button primary" onClick={openModal}>
+        <Icon name="filter"></Icon>
+        {data.facetsTitle + totalfiltertext}
+      </Button>
       <TransitionablePortal
         open={open}
         transition={{ animation: 'fade right', duration: 1000 }}

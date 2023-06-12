@@ -9,6 +9,7 @@
 @import 'home';
 @import 'news';
 @import 'sponsors';
+@import 'talks';
 @import 'forms';
 @import 'button';
 @import 'footer';

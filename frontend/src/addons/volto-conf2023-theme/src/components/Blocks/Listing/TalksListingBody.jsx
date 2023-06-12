@@ -10,7 +10,7 @@ import { Popup } from 'semantic-ui-react';
 const TalksListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
-
+  console.log(items);
   if (isInternalURL(href)) {
     link = (
       <ConditionalLink to={flattenToAppURL(href)} condition={!isEditMode}>
@@ -61,13 +61,17 @@ const TalksListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
                     trigger={
                       <div className="speakers-preview">
                         {!speaker?.image && (
-                          <img src={DefaultImageSVG} alt="" />
+                          <div className="speakers-preview-image">
+                            <img src={DefaultImageSVG} alt="" />
+                          </div>
                         )}
                         {speaker?.image && (
-                          <img
-                            src={flattenToAppURL(speaker?.image.download)}
-                            alt={item.title}
-                          />
+                          <div className="speakers-preview-image">
+                            <img
+                              src={flattenToAppURL(speaker?.image.download)}
+                              alt={item.title}
+                            />
+                          </div>
                         )}
                       </div>
                     }
