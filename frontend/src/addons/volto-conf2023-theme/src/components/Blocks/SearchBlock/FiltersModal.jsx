@@ -1,6 +1,5 @@
 import React from 'react';
 import { Modal, TransitionablePortal } from 'semantic-ui-react';
-import { FormattedMessage } from 'react-intl';
 import { Button } from 'semantic-ui-react';
 import { isEmpty } from 'lodash';
 
