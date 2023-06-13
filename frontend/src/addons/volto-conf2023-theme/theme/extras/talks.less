@@ -6,42 +6,49 @@
   .listing-item {
     margin-bottom: 0;
   }
+
   > .listing-item > a {
     padding: 1rem 0;
     border-bottom: 1px solid @tertiaryColor;
+
     .listing-body {
       width: 75%;
     }
+
     .listing-image-wrapper {
-      width: 25%;
       display: flex;
+      width: 25%;
       flex-wrap: wrap;
+      align-content: start;
       justify-content: space-between;
       margin-left: 2rem;
-      align-content: start;
       gap: 1rem;
     }
   }
+
   h2 {
     color: @tertiaryColor;
   }
+
   .speakers-preview {
     width: 45%;
 
     .speakers-preview-image {
       position: relative;
+
       &::before {
         position: absolute;
-        left: 0;
-        top: 0;
-        content: '';
-        background: @secondaryColor;
         z-index: 2;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        opacity: 0.2;
+        background: @secondaryColor;
         border-radius: 10%;
+        content: '';
+        opacity: 0.2;
       }
+
       img {
         width: 100%;
         border-radius: 10%;
@@ -56,17 +63,20 @@
   .talks-listing {
     .listing-item a {
       flex-direction: column;
+
       .listing-body {
         width: 100%;
       }
+
       .listing-image-wrapper {
-        width: 100%;
         display: flex;
+        width: 100%;
         justify-content: start;
-        gap: 1rem;
         margin-left: 0;
+        gap: 1rem;
       }
     }
+
     .speakers-preview {
       width: 20%;
     }
@@ -80,46 +90,50 @@
 }
 
 .ui.label {
-  color: @tertiaryColor;
-  font-weight: normal;
-  border-radius: 0.5rem;
-  font-size: 1rem !important;
   padding: 0.4rem 0.4rem;
   background-color: @grey;
+  border-radius: 0.5rem;
+  color: @tertiaryColor;
+  font-size: 1rem !important;
+  font-weight: normal;
 }
 
 .talk-header {
   display: flex;
+
   .talk-content {
     width: 75%;
   }
 
   .listing-image-wrapper {
-    width: 25%;
     display: flex;
+    width: 25%;
     flex-wrap: wrap;
+    align-content: start;
     justify-content: space-between;
     margin-left: 2rem;
-    align-content: start;
     gap: 1rem;
   }
+
   .speakers-preview {
     width: 45%;
     flex-grow: 1; // Error with 3 items
     .speakers-preview-image {
       position: relative;
+
       &::before {
         position: absolute;
-        left: 0;
-        top: 0;
-        content: '';
-        background: @secondaryColor;
         z-index: 2;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        opacity: 0.2;
+        background: @secondaryColor;
         border-radius: 10%;
+        content: '';
+        opacity: 0.2;
       }
+
       img {
         width: 100%;
         border-radius: 10%;
@@ -133,16 +147,17 @@
 @media only screen and (max-width: @largestTabletScreen) {
   .talk-header {
     flex-direction: column;
+
     .talk-content {
       width: 100%;
     }
 
     .listing-image-wrapper {
-      width: 100%;
       display: flex;
+      width: 100%;
       justify-content: start;
-      gap: 1rem;
       margin: 1rem 0;
+      gap: 1rem;
     }
 
     .speakers-preview {

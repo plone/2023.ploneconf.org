@@ -1,15 +1,17 @@
 .filter-search-wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: start;
   width: 100%;
+  align-items: start;
+  justify-content: space-between;
+
   .filters {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: end;
-    align-items: start;
     width: 70%;
+    flex-direction: row-reverse;
+    align-items: start;
+    justify-content: end;
   }
+
   .search-wrapper {
     width: 30%;
   }
@@ -20,57 +22,67 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
   width: 100% !important;
   margin-top: 0 !important;
 }
+
 .modal-filters {
   position: fixed;
+  z-index: 10000;
   top: 0;
   bottom: 0;
   width: 100%;
-  z-index: 10000;
 }
+
 .modal-filters-background {
-  height: 100vh;
   display: flex;
-  justify-content: flex-end;
   overflow: auto;
+  height: 100vh;
+  justify-content: flex-end;
 }
+
 .modal-filters-container {
   display: flex;
-  flex-direction: column;
   width: 100%;
+  min-height: 900px;
+  flex-direction: column;
   background: @primaryColor;
   color: white;
   text-transform: uppercase;
-  min-height: 900px;
+
   .fieldset {
     border: none;
     margin: 2rem 0;
+
     .item > .header {
-      font-weight: bold;
       margin-bottom: 2rem;
+      font-weight: bold;
     }
   }
+
   .ui.list > .item .header {
+    margin: 1rem 0;
     font-weight: bold;
     text-transform: uppercase !important;
-    margin: 1rem 0;
   }
+
   .ui.list .list > .item .header {
-    font-weight: normal;
     margin: 0 0 0.5rem 0;
+    font-weight: normal;
   }
+
   .ui.checkbox label::before {
+    border: 1px solid @tertiaryColor;
     background-color: @primaryColor;
     box-shadow: none;
-    border: 1px solid @tertiaryColor;
   }
+
   .ui.checkbox input:focus ~ label {
     color: @tertiaryColor;
   }
+
   .icon-close {
-    background: url('../assets/images/i-close_w.svg') no-repeat top left;
+    display: block;
     width: 36px;
     height: 36px;
-    display: block;
+    background: url('../assets/images/i-close_w.svg') no-repeat top left;
     cursor: pointer;
   }
 }
@@ -90,16 +102,18 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
     width: 20%;
   }
 }
+
 .modal-filters-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 2rem 2rem;
 }
 
 .modal-filters-body {
   padding: 0 1rem;
 }
+
 .apply-filters-button {
   padding: 0 1rem;
   margin-top: 3rem;
@@ -108,27 +122,33 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
   .modal-filters-header {
     padding: 1rem 2rem !important;
   }
+
   .filter-search-wrapper {
     display: flex;
     flex-direction: column-reverse;
+
     .filters {
-      width: 100%;
       display: flex;
+      width: 100%;
       flex-direction: column-reverse;
       align-items: center;
     }
+
     .search-wrapper {
       width: 100%;
     }
   }
 }
+
 .modal-filters-container .ui.list > .item .header {
   margin: 1rem 0;
   font-weight: 500;
 }
+
 .checkbox-facet .item {
   padding: 0 !important;
 }
+
 .ui.basic.segment.facet {
   padding-top: 0;
   padding-bottom: 0;

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Modal, TransitionablePortal } from 'semantic-ui-react';
-import { Button, Icon, Label } from 'semantic-ui-react';
+import { Button, Icon } from 'semantic-ui-react';
 import { isEmpty } from 'lodash';
 
 function FiltersModal(props) {
-  let { children, size = 'fullscreen', data, setFacets, facets = {} } = props;
+  let { children, size = 'fullscreen', data, facets = {} } = props;
   const [open, setOpen] = React.useState(false);
   const definedFacets = data.facets || [];
 
