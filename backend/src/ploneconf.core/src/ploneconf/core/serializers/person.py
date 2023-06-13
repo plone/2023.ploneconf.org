@@ -25,17 +25,16 @@ class PersonJSONSummarySerializer:
         if not image:
             return None
 
-        width, height = image.getImageSize()
-
-        url = get_original_image_url(self.context, "image", width, height)
+        context_images_view = self.context.restrictedTraverse("@@images")
+        url = context_images_view.scale("image", width=400, height=400, mode="down").url
 
         return {
             "filename": image.filename,
             "content-type": image.contentType,
             "size": image.getSize(),
             "download": url,
-            "width": width,
-            "height": height,
+            "width": 400,
+            "height": 400,
         }
 
     def __call__(self):
