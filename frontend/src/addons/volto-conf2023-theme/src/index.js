@@ -20,7 +20,7 @@ import PloneConfFacets from './components/Blocks/SearchBlock/PloneConfFacets';
 import {
   NewsListingBody,
   PersonsListingBody,
-  // PersonsSimpleListingBody,
+  PersonsSimpleListingBody,
   TalksListingBody,
   HomeCheckboxSchema,
 } from './components/Blocks/Listing';
@@ -173,11 +173,11 @@ const applyConfig = (config) => {
       template: PersonsListingBody,
       schemaEnhancer: HomeCheckboxSchema,
     },
-    // {
-    //   id: 'personsSimple',
-    //   title: 'Persons Simple',
-    //   template: PersonsSimpleListingBody,
-    // },
+    {
+      id: 'personsSimple',
+      title: 'Persons Simple',
+      template: PersonsSimpleListingBody,
+    },
     {
       id: 'talks',
       title: 'Talks',

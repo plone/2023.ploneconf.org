@@ -10,6 +10,8 @@
 @import 'news';
 @import 'sponsors';
 @import 'talks';
+@import 'speakerimage';
+@import 'persons';
 @import 'forms';
 @import 'button';
 @import 'footer';

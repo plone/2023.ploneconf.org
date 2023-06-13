@@ -53,32 +53,6 @@ const TalksListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
                   />
                 )}
               </div>
-              {/* <div className="listing-image-wrapper">
-                {item?.presenters?.map((speaker) => (
-                  <Popup
-                    trigger={
-                      <div className="speakers-preview">
-                        {!speaker?.image && (
-                          <div className="speakers-preview-image">
-                            <img src={DefaultImageSVG} alt="" />
-                          </div>
-                        )}
-                        {speaker?.image && (
-                          <div className="speakers-preview-image">
-                            <img
-                              src={flattenToAppURL(speaker?.image.download)}
-                              alt={item.title}
-                            />
-                          </div>
-                        )}
-                      </div>
-                    }
-                    position="top center"
-                  >
-                    <Popup.Content>{speaker.title}</Popup.Content>
-                  </Popup>
-                ))}
-              </div> */}
               <PresentersInfo content={item} />
             </ConditionalLink>
           </div>

@@ -1,0 +1,30 @@
+.persons-simple-listing {
+  .listing-item a {
+    display: flex;
+    flex-direction: column;
+    .speakers-preview-image img {
+      aspect-ratio: 1/1;
+    }
+    .listing-body {
+      h3 {
+        color: @tertiaryColor;
+        margin: 1rem 0;
+      }
+      .person-social {
+        display: flex;
+        justify-content: start;
+        gap: 1rem;
+        a {
+          width: auto;
+          :hover {
+            fill: @primaryColor !important;
+          }
+          svg {
+            fill: @tertiaryColor !important;
+            width: 1rem !important;
+          }
+        }
+      }
+    }
+  }
+}
