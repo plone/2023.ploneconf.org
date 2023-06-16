@@ -72,10 +72,13 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
     color: white;
   }
 
-  .ui.checkbox label::before {
+  .ui.checkbox label::before,
+  .ui.checkbox input:checked ~ label:before,
+  .ui.checkbox input:checked ~ label:after {
     border: 1px solid @secondaryColor;
     background-color: white;
     box-shadow: none;
+    color: @secondaryColor;
   }
 
   .ui.checkbox input:focus ~ label {
@@ -93,20 +96,58 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
   .segment.facet {
     margin-bottom: 3rem;
   }
+
   h4.ui.header {
+    margin-bottom: 0.5rem;
     color: white;
     font-weight: bold;
-    margin-bottom: 0.5rem;
   }
+
   .apply-filters-button {
     .ui.button {
       background-color: white;
       color: @secondaryColor;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
     }
+
     .ui.button:hover {
-      color: white;
       background-color: @tertiaryColor;
+      color: white;
     }
+  }
+}
+
+.modal-filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+}
+
+.modal-filters-body {
+  padding: 0 1rem;
+}
+
+.apply-filters-button {
+  padding: 0 1rem;
+  margin-top: 3rem;
+}
+
+.modal-filters-container .ui.list > .item .header {
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+.checkbox-facet .item {
+  padding: 0 !important;
+}
+
+.ui.basic.segment.facet {
+  padding-top: 0;
+  padding-bottom: 0;
+  .checkbox-facet .entry {
+    padding: 0.3rem 0;
   }
 }
 
@@ -126,21 +167,6 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
   }
 }
 
-.modal-filters-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem 2rem;
-}
-
-.modal-filters-body {
-  padding: 0 1rem;
-}
-
-.apply-filters-button {
-  padding: 0 1rem;
-  margin-top: 3rem;
-}
 @media (max-width: @largestTabletScreen) {
   .modal-filters-header {
     padding: 1rem 2rem !important;
@@ -161,18 +187,4 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
       width: 100%;
     }
   }
-}
-
-.modal-filters-container .ui.list > .item .header {
-  margin: 1rem 0;
-  font-weight: 500;
-}
-
-.checkbox-facet .item {
-  padding: 0 !important;
-}
-
-.ui.basic.segment.facet {
-  padding-top: 0;
-  padding-bottom: 0;
 }

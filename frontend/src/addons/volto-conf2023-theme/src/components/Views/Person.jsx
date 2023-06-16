@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Label, Tab, Grid } from 'semantic-ui-react';
+import { Container, Tab, Grid } from 'semantic-ui-react';
 import { Icon } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import githubSVG from '../../icons/github.svg';
