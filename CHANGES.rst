@@ -1,3 +1,10 @@
+2023-06-16 1.13
+--------------
+
+- Speakers, Talks and filters
+- Small style changes
+  [libargutxi]
+
 2023-05-12 1.11
 --------------
 
