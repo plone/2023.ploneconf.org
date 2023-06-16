@@ -43,7 +43,7 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
   width: 100%;
   min-height: 900px;
   flex-direction: column;
-  background: @primaryColor;
+  background: @secondaryColor;
   color: white;
   text-transform: uppercase;
 
@@ -68,14 +68,18 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
     font-weight: normal;
   }
 
+  .ui.checkbox label {
+    color: white;
+  }
+
   .ui.checkbox label::before {
-    border: 1px solid @tertiaryColor;
-    background-color: @primaryColor;
+    border: 1px solid @secondaryColor;
+    background-color: white;
     box-shadow: none;
   }
 
   .ui.checkbox input:focus ~ label {
-    color: @tertiaryColor;
+    color: white;
   }
 
   .icon-close {
@@ -84,6 +88,25 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
     height: 36px;
     background: url('../assets/images/i-close_w.svg') no-repeat top left;
     cursor: pointer;
+  }
+
+  .segment.facet {
+    margin-bottom: 3rem;
+  }
+  h4.ui.header {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .apply-filters-button {
+    .ui.button {
+      background-color: white;
+      color: @secondaryColor;
+    }
+    .ui.button:hover {
+      color: white;
+      background-color: @tertiaryColor;
+    }
   }
 }
 

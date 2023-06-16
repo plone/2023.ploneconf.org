@@ -8,7 +8,7 @@
   }
 
   > .listing-item > a {
-    padding: 1rem 0;
+    padding: 3rem 0;
     border-bottom: 1px solid @tertiaryColor;
 
     .listing-body {
@@ -24,6 +24,11 @@
       margin-left: 2rem;
       gap: 1rem;
     }
+  }
+
+  .listing-item p a {
+    display: inline-block;
+    width: auto;
   }
 
   h2 {
@@ -65,15 +70,6 @@
   justify-content: center;
 }
 
-.ui.label {
-  padding: 0.4rem 0.4rem;
-  background-color: @grey;
-  border-radius: 0.5rem;
-  color: @tertiaryColor;
-  font-size: 1rem !important;
-  font-weight: normal;
-}
-
 .talk-header {
   display: flex;
 
@@ -93,11 +89,13 @@
 
   .speakers-preview {
     width: 45%;
-    flex-grow: 1; // Error with 3 items
     > a {
       display: flex;
       width: 100%;
     }
+  }
+  .speakers-preview:only-child {
+    flex-grow: 1;
   }
 }
 

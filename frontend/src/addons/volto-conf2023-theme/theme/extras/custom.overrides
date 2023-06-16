@@ -4,6 +4,8 @@
 @import 'tableofcontents';
 @import 'table';
 @import 'teaser';
+@import 'label';
+@import 'tabs';
 @import 'searchfilters';
 @import 'underlinedheader';
 @import 'home';
@@ -12,6 +14,8 @@
 @import 'talks';
 @import 'speakerimage';
 @import 'persons';
+@import 'person';
+@import 'personsocial';
 @import 'forms';
 @import 'button';
 @import 'footer';
