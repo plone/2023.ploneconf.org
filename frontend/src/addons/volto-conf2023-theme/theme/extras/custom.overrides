@@ -18,4 +18,5 @@
 @import 'personsocial';
 @import 'forms';
 @import 'button';
+@import 'schedule';
 @import 'footer';
