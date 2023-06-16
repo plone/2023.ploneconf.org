@@ -1,0 +1,26 @@
+.speakers-preview-image {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: @secondaryColor;
+    border-radius: 10%;
+    content: '';
+    filter: contrast(0.5) brightness(0.5);
+    mix-blend-mode: hard-light;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 10%;
+    filter: grayscale(100%) contrast(1.1);
+    mix-blend-mode: luminosity;
+    object-fit: cover;
+  }
+}

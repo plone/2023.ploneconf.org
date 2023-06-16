@@ -1,0 +1,190 @@
+.filter-search-wrapper {
+  display: flex;
+  width: 100%;
+  align-items: start;
+  justify-content: space-between;
+
+  .filters {
+    display: flex;
+    width: 70%;
+    flex-direction: row-reverse;
+    align-items: start;
+    justify-content: end;
+  }
+
+  .search-wrapper {
+    width: 30%;
+  }
+}
+
+div#fullscreen-filter-modal.ui.fullscreen.modal {
+  top: 0 !important;
+  width: 100% !important;
+  margin-top: 0 !important;
+}
+
+.modal-filters {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.modal-filters-background {
+  display: flex;
+  overflow: auto;
+  height: 100vh;
+  justify-content: flex-end;
+}
+
+.modal-filters-container {
+  display: flex;
+  width: 100%;
+  min-height: 900px;
+  flex-direction: column;
+  background: @secondaryColor;
+  color: white;
+  text-transform: uppercase;
+
+  .fieldset {
+    border: none;
+    margin: 2rem 0;
+
+    .item > .header {
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  .ui.list > .item .header {
+    margin: 1rem 0;
+    font-weight: bold;
+    text-transform: uppercase !important;
+  }
+
+  .ui.list .list > .item .header {
+    margin: 0 0 0.5rem 0;
+    font-weight: normal;
+  }
+
+  .ui.checkbox label {
+    color: white;
+  }
+
+  .ui.checkbox label::before,
+  .ui.checkbox input:checked ~ label:before,
+  .ui.checkbox input:checked ~ label:after {
+    border: 1px solid @secondaryColor;
+    background-color: white;
+    box-shadow: none;
+    color: @secondaryColor;
+  }
+
+  .ui.checkbox input:focus ~ label {
+    color: white;
+  }
+
+  .icon-close {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: url('../assets/images/i-close_w.svg') no-repeat top left;
+    cursor: pointer;
+  }
+
+  .segment.facet {
+    margin-bottom: 3rem;
+  }
+
+  h4.ui.header {
+    margin-bottom: 0.5rem;
+    color: white;
+    font-weight: bold;
+  }
+
+  .apply-filters-button {
+    .ui.button {
+      background-color: white;
+      color: @secondaryColor;
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+    }
+
+    .ui.button:hover {
+      background-color: @tertiaryColor;
+      color: white;
+    }
+  }
+}
+
+.modal-filters-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 2rem;
+}
+
+.modal-filters-body {
+  padding: 0 1rem;
+}
+
+.apply-filters-button {
+  padding: 0 1rem;
+  margin-top: 3rem;
+}
+
+.modal-filters-container .ui.list > .item .header {
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+.checkbox-facet .item {
+  padding: 0 !important;
+}
+
+.ui.basic.segment.facet {
+  padding-top: 0;
+  padding-bottom: 0;
+  .checkbox-facet .entry {
+    padding: 0.3rem 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal-filters-container {
+    width: 70%;
+  }
+}
+@media (min-width: 768px) {
+  .modal-filters-container {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .modal-filters-container {
+    width: 20%;
+  }
+}
+
+@media (max-width: @largestTabletScreen) {
+  .modal-filters-header {
+    padding: 1rem 2rem !important;
+  }
+
+  .filter-search-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .filters {
+      display: flex;
+      width: 100%;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    .search-wrapper {
+      width: 100%;
+    }
+  }
+}

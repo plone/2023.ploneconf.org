@@ -5,6 +5,7 @@ from zope.schema.vocabulary import SimpleVocabulary
 
 
 LEVELS = [
+    ("patron", "Patronage"),
     ("diamond", "Diamond"),
     ("platinum", "Platinum"),
     ("gold", "Gold"),
@@ -12,7 +13,6 @@ LEVELS = [
     ("bronze", "Bronze"),
     ("supporting", "Supporting"),
     ("oss", "Open Source"),
-    ("patron", "Patronage"),
     ("organizer", "Organized by"),
 ]
 

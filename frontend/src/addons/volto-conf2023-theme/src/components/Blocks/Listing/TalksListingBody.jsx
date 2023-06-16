@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 import { ConditionalLink } from '@plone/volto/components';
 import { flattenToAppURL } from '@plone/volto/helpers';
 import cx from 'classnames';
-import DefaultImageSVG from '@plone/volto/components/manage/Blocks/Listing/default-image.svg';
 import { isInternalURL } from '@plone/volto/helpers/Url/Url';
-import { Popup } from 'semantic-ui-react';
+import PresentersInfo from '../../../components/Session/PresentersInfo/PresentersInfo';
 
 const TalksListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
   let link = null;
   let href = linkHref?.[0]?.['@id'] || '';
-
   if (isInternalURL(href)) {
     link = (
       <ConditionalLink to={flattenToAppURL(href)} condition={!isEditMode}>
@@ -55,28 +53,7 @@ const TalksListingBody = ({ items, linkTitle, linkHref, isEditMode }) => {
                   />
                 )}
               </div>
-              <div className="listing-image-wrapper">
-                {item?.presenters?.map((speaker) => (
-                  <Popup
-                    trigger={
-                      <div className="speakers-preview">
-                        {!speaker?.image && (
-                          <img src={DefaultImageSVG} alt="" />
-                        )}
-                        {speaker?.image && (
-                          <img
-                            src={flattenToAppURL(speaker?.image.download)}
-                            alt={item.title}
-                          />
-                        )}
-                      </div>
-                    }
-                    position="top center"
-                  >
-                    <Popup.Content>{speaker.title}</Popup.Content>
-                  </Popup>
-                ))}
-              </div>
+              <PresentersInfo content={item} />
             </ConditionalLink>
           </div>
         ))}

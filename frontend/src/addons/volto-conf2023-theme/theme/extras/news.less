@@ -6,17 +6,20 @@
     margin: 0;
   }
 }
+
 .contenttype-news-item {
   .news-date {
     margin-bottom: 1rem;
     text-align: center;
   }
+
   .documentDescription {
     margin-top: 1rem;
-    font-weight: bold;
     color: @tertiaryColor;
+    font-weight: bold;
   }
 }
+
 .news-listing {
   .news-listing-title {
     margin: 0.5rem 0 !important;
@@ -27,14 +30,16 @@
     display: flex;
     justify-content: end;
   }
+
   img {
     aspect-ratio: 1.5;
     object-fit: cover;
   }
 }
 
-body.section-news .news-listing h2 {
-  display: none;
+body.section-news .news-listing h2,
+.news-listing-more {
+  display: none !important;
 }
 
 .contenttype-news-item .ui.basic.segment.content-area {

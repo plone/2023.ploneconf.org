@@ -16,11 +16,11 @@ import SponsorsEdit from './components/Blocks/Sponsors/Edit';
 import SponsorsView from './components/Blocks/Sponsors/View';
 import VenueEdit from './components/Blocks/Venue/Edit';
 import VenueView from './components/Blocks/Venue/View';
-
+import PloneConfFacets from './components/Blocks/SearchBlock/PloneConfFacets';
 import {
   NewsListingBody,
   PersonsListingBody,
-  // PersonsSimpleListingBody,
+  PersonsSimpleListingBody,
   TalksListingBody,
   HomeCheckboxSchema,
 } from './components/Blocks/Listing';
@@ -156,6 +156,15 @@ const applyConfig = (config) => {
 
   config.blocks.blocksConfig.__grid.blocksConfig.teaser.variations = teaserVariations;
 
+  config.blocks.blocksConfig.search.variations = [
+    ...config.blocks.blocksConfig.search.variations,
+    {
+      id: 'PloneConfFacets',
+      title: 'Facets PloneConf search',
+      view: PloneConfFacets,
+      isDefault: false,
+    },
+  ];
   config.blocks.blocksConfig.listing.variations = [
     ...config.blocks.blocksConfig.listing.variations,
     {
@@ -164,11 +173,11 @@ const applyConfig = (config) => {
       template: PersonsListingBody,
       schemaEnhancer: HomeCheckboxSchema,
     },
-    // {
-    //   id: 'personsSimple',
-    //   title: 'Persons Simple',
-    //   template: PersonsSimpleListingBody,
-    // },
+    {
+      id: 'personsSimple',
+      title: 'Persons Simple',
+      template: PersonsSimpleListingBody,
+    },
     {
       id: 'talks',
       title: 'Talks',
@@ -332,6 +341,7 @@ const applyConfig = (config) => {
       {...props}
     />
   );
+
   config.settings.slate.elements['H2Styled'] = H2StyledElement;
   config.settings.slate.toolbarButtons = [
     ...(config.settings.slate.toolbarButtons || []),
