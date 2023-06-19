@@ -20,12 +20,14 @@ function FiltersModal(props) {
       Object.keys(facets).includes(field.value) &&
       !isEmpty(facets[field.value]),
   ).length;
-  const totalfiltertext = totalFilters ? ' ' + totalFilters : '';
   return (
     <>
       <Button className="ui button secondary" onClick={openModal}>
         <Icon name="filter"></Icon>
-        {data.facetsTitle + totalfiltertext}
+        <span>{data.facetsTitle}</span>
+        {totalFilters > 0 && (
+          <span className="filters-bullet">{totalFilters}</span>
+        )}
       </Button>
       <TransitionablePortal
         open={open}

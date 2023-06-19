@@ -1,3 +1,21 @@
+.search-filters {
+  .filters-bullet {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.2rem 0.5rem;
+    margin-left: 0.5rem;
+    background-color: white;
+    border-radius: 50%;
+    color: @secondaryColor;
+  }
+
+  &:hover {
+    .filters-bullet {
+      color: @tertiaryColor;
+    }
+  }
+}
+
 .filter-search-wrapper {
   display: flex;
   width: 100%;
@@ -105,10 +123,10 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
 
   .apply-filters-button {
     .ui.button {
-      background-color: white;
-      color: @secondaryColor;
       padding: 1rem 2rem;
+      background-color: white;
       border-radius: 0.5rem;
+      color: @secondaryColor;
     }
 
     .ui.button:hover {
@@ -146,6 +164,7 @@ div#fullscreen-filter-modal.ui.fullscreen.modal {
 .ui.basic.segment.facet {
   padding-top: 0;
   padding-bottom: 0;
+
   .checkbox-facet .entry {
     padding: 0.3rem 0;
   }

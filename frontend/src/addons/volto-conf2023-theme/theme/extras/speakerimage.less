@@ -23,4 +23,15 @@
     mix-blend-mode: luminosity;
     object-fit: cover;
   }
+
+  &:hover {
+    &::before {
+      content: none;
+    }
+
+    img {
+      filter: none;
+      mix-blend-mode: normal;
+    }
+  }
 }
