@@ -17,9 +17,9 @@ EOT
 
 FROM plone/frontend-prod-config:${VOLTO_VERSION}
 
-LABEL maintainer="kitconcept GmbH <server@kitconcept.com>" \
-      org.label-schema.name="intra.kitconcept.com-frontend" \
-      org.label-schema.description="kitconcept Intranet frontend image." \
-      org.label-schema.vendor="kitconcept GmbH"
+LABEL maintainer="Plone Foundation <conf@plone.org>" \
+      org.label-schema.name="ploneconf-2023-frontend" \
+      org.label-schema.description="Plone Conference 2023 frontend." \
+      org.label-schema.vendor="Plone Foundation"
 
 COPY --from=builder /app/ /app/
