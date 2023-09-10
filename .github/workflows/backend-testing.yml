@@ -23,7 +23,7 @@ jobs:
       PLONE_VERSION: ${{ steps.vars.outputs.PLONE_VERSION }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set Env Vars
         id: vars
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run check
         uses: plone/code-analysis-action@v2
@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run check
         uses: plone/code-analysis-action@v2
@@ -74,7 +74,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout codebase
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Run check
         uses: plone/code-analysis-action@v2
@@ -89,7 +89,7 @@ jobs:
       - meta
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Run tests
         run: |
@@ -104,7 +104,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Docker meta
         id: meta
@@ -130,7 +130,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           platforms: linux/amd64
           context: backend
@@ -153,7 +153,7 @@ jobs:
       url: testing.ploneconf.org
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Deploy to cluster
         uses: kitconcept/docker-stack-deploy@v1.2.0
