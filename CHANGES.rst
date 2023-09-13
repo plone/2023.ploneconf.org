@@ -1,6 +1,9 @@
 2023-09-10 unreleased
 ---------------------
 
+- Fix ++api++/++api++/++api++ calls with Traefik filter rule
+  [ericof, fredvd]
+
 - Update Plone backend to 6.0.6, Volto frontend to 16.23.0
 - Update docker compose stack versions to 3.8
 - Update workflow actions
