@@ -4,7 +4,7 @@
 - Fix ++api++/++api++/++api++ calls with Traefik filter rule
   [ericof, fredvd]
 
-- Update Plone backend to 6.0.6, Volto frontend to 16.23.0
+- Update Plone backend to 6.0.6, Volto frontend to 16.24.0
 - Update docker compose stack versions to 3.8
 - Update workflow actions
 - Fix OSI container image labels for frontednd and backend
