@@ -21,7 +21,7 @@ EOT
 FROM plone/server-prod-config:${PLONE_VERSION}
 
 LABEL maintainer="Plone Foundation <conf@plone.org>" \
-      org.label-schema.name="ploneconf-backend" \
+      org.label-schema.name="ploneconf-2023-backend" \
       org.label-schema.description="Plone Conference 2023 backend." \
       org.label-schema.vendor="Plone Foundation"
 

@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.8"
 
 services:
   frontend:
@@ -55,6 +55,8 @@ services:
         - traefik.http.middlewares.testing_ploneconf-backend-auth.basicauth.users=ploneconf:$$2y$$05$$SLsKIKgK.NlD.64HMV42hOUNi3pQM/T.iW4qziWs0xcKHzkaa8T8C
         - traefik.http.middlewares.testing_ploneconf-zope-auth.basicauth.users=zopeadmin:$$apr1$$7jQv8Qcp$$IzN7fnLaFrWJR7Ob5cljK/
         ### Backend ++api++ VHM
+        - "traefik.http.middlewares.testing_ploneconf-vhm-cleanup.replacepathregex.regex=^/((\\+\\+api\\+\\+/){1,})($$|.*)"
+        - "traefik.http.middlewares.testing_ploneconf-vhm-cleanup.replacepathregex.replacement=/VirtualHostBase/https/testing.ploneconf.org/Plone/++api++/VirtualHostRoot/$$3"
         - "traefik.http.middlewares.testing_ploneconf-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
         - "traefik.http.middlewares.testing_ploneconf-vhm.replacepathregex.replacement=/VirtualHostBase/https/testing.ploneconf.org/Plone/++api++/VirtualHostRoot/$$1"
         ### Backend ClassicUI VHM
@@ -69,7 +71,7 @@ services:
         - traefik.http.routers.testing_ploneconf-backend.entrypoints=https
         - traefik.http.routers.testing_ploneconf-backend.tls=true
         - traefik.http.routers.testing_ploneconf-backend.service=testing_ploneconf-backend
-        - traefik.http.routers.testing_ploneconf-backend.middlewares=gzip,testing_ploneconf-vhm
+        - traefik.http.routers.testing_ploneconf-backend.middlewares=gzip,testing_ploneconf-vhm-cleanup,testing_ploneconf-vhm
         ### ploneconf.org /ClassicUI - protected with basic auth (prevent SEOs from crawl it)
         - traefik.http.routers.testing_ploneconf-classicui.rule=Host(`testing.ploneconf.org`) && (PathPrefix(`/ClassicUI`))
         - traefik.http.routers.testing_ploneconf-classicui.entrypoints=https

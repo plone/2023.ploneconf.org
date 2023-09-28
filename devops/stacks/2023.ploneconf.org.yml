@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.8"
 
 services:
   frontend:
@@ -54,6 +54,8 @@ services:
         ### ClassicUI Access Authentication
         - traefik.http.middlewares.2023_ploneconf-backend-auth.basicauth.users=ploneconf:$$2y$$05$$SLsKIKgK.NlD.64HMV42hOUNi3pQM/T.iW4qziWs0xcKHzkaa8T8C
         ### Backend ++api++ VHM
+        - "traefik.http.middlewares.2023_ploneconf-vhm-cleanup.replacepathregex.regex=^/((\\+\\+api\\+\\+/){1,})($$|.*)"
+        - "traefik.http.middlewares.2023_ploneconf-vhm-cleanup.replacepathregex.replacement=/VirtualHostBase/https/2023.ploneconf.org/Plone/++api++/VirtualHostRoot/$$3"
         - "traefik.http.middlewares.2023_ploneconf-vhm.replacepathregex.regex=^/\\+\\+api\\+\\+($$|/.*)"
         - "traefik.http.middlewares.2023_ploneconf-vhm.replacepathregex.replacement=/VirtualHostBase/https/2023.ploneconf.org/Plone/++api++/VirtualHostRoot/$$1"
         ### Backend ClassicUI VHM
@@ -65,7 +67,7 @@ services:
         - traefik.http.routers.2023_ploneconf-backend.entrypoints=https
         - traefik.http.routers.2023_ploneconf-backend.tls=true
         - traefik.http.routers.2023_ploneconf-backend.service=2023_ploneconf-backend
-        - traefik.http.routers.2023_ploneconf-backend.middlewares=gzip,2023_ploneconf-vhm
+        - traefik.http.routers.2023_ploneconf-backend.middlewares=gzip,2023_ploneconf-vhm-cleanup,2023_ploneconf-vhm
         ### ploneconf.org /ClassicUI - protected with basic auth (prevent SEOs from crawl it)
         - traefik.http.routers.2023_ploneconf-classicui.rule=Host(`2023.ploneconf.org`) && (PathPrefix(`/ClassicUI`))
         - traefik.http.routers.2023_ploneconf-classicui.entrypoints=https
