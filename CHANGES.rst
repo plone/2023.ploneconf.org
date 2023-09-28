@@ -1,3 +1,10 @@
+1.16 (2023-09-28)
+-----------------
+
+- Style small changes on mobile
+  [libargutxi]
+
+
 1.16.dev0 (unreleased)
 -----------------------
 
