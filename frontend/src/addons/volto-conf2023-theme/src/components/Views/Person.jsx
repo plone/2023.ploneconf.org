@@ -14,7 +14,7 @@ const Person = ({ content }) => {
     <Container className="person-view">
       <Grid columns={2} stackable>
         <Grid.Column width={4} className="speaker-image-wrapper">
-          <div className="speakers-preview-image">
+          <div className="speakers-preview-image no-filter">
             {content.image ? (
               <img
                 src={flattenToAppURL(content.image.scales.preview.download)}
