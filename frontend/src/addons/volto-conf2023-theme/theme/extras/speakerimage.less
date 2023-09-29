@@ -35,3 +35,14 @@
     }
   }
 }
+
+.speakers-preview-image.no-filter {
+  &::before {
+    content: none;
+  }
+
+  img {
+    filter: none;
+    mix-blend-mode: normal;
+  }
+}
