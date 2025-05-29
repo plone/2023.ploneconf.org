@@ -1,4 +1,4 @@
-name: Backend test, release and deploy to testing.ploneconf.org
+name: Backend test and build.
 
 on:
   workflow_dispatch:

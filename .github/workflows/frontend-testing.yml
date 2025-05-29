@@ -1,5 +1,4 @@
-name: Frontend test, release and deploy to testing.ploneconf.org
-
+name: Frontend test, and build.
 on:
   workflow_dispatch:
   push:

@@ -53,10 +53,11 @@ setup(
         "collective.exportimport",
         "collective.z3cform.norobots",
         "collective.honeypot",
+        "plone.autoinclude==2.0.3"
     ],
     extras_require={
         "test": [
-            "gocept.pytestlayer",
+            "zope.pytestlayer",
             "mock",
             "plone.app.testing",
             "plone.restapi[test]",
