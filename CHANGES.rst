@@ -1,3 +1,11 @@
+1.19 (unreleased)
+-----------------
+
+- add DB_PORT variable. @fredvd
+- replacye gocept.pytestlayer. @fredvd
+- Pin plone.autoinclude to 2.0.3 @fredvd
+- Update GHA actions. @fredvd
+
 1.16 (2023-09-28)
 -----------------
 

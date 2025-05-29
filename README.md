@@ -7,6 +7,8 @@
 
 Plone Conference 2023 Website
 
+NOTE: Deployment to testing.ploneconf.org has been disabled. This website is in maintenance/archive mode.  Don't use the CI/CD or scaffold here for new projects. 
+
 ## Quick start
 
 ### Development Setup

@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-ARG PLONE_VERSION
+ARG PLONE_VERSION=6.0.6
 FROM plone/server-dev:${PLONE_VERSION}
 
 # Copy code and requirements
