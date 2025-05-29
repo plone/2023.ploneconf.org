@@ -53,7 +53,7 @@ setup(
         "collective.exportimport",
         "collective.z3cform.norobots",
         "collective.honeypot",
-        "plone.autoinclude==2.0.3"
+        "plone.autoinclude==2.0.3",
     ],
     extras_require={
         "test": [
