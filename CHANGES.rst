@@ -1,7 +1,7 @@
 1.21 (unreleased)
 -----------------
 
-- Nothing changed yet.
+- Add GHA permissions. @fredvd
 
 
 1.20 (2025-05-30)
