@@ -1,3 +1,8 @@
+1.20.dev0 (unreleased)
+----------------------
+
+- rerelease with fixed GH environments. @fredvd
+
 1.19 (2025-05-30)
 -----------------
 
