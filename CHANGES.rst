@@ -1,4 +1,4 @@
-1.19 (unreleased)
+1.19 (2025-05-30)
 -----------------
 
 - add DB_PORT variable. @fredvd
