@@ -1,4 +1,4 @@
-1.21 (unreleased)
+1.21 (2025-05-30)
 -----------------
 
 - Add GHA permissions. @fredvd
