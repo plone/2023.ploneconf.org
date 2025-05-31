@@ -1,4 +1,4 @@
-1.22 (unreleased)
+1.22 (2025-05-31)
 -----------------
 
 - Fix DB_PORT substitute in stack file. @davisagli, @fredvd
